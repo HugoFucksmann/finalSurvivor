@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dpc4epuxyc14f"]
+
+[ext_resource type="Shader" path="res://effects/rainBow_outline.gdshader" id="1_0ufeu"]
+
+[resource]
+shader = ExtResource("1_0ufeu")
+shader_parameter/line_thickness = 1.0
+shader_parameter/sin_frequency = 1.0
+shader_parameter/sin_offset = 0.0
+shader_parameter/light_offset = 0.5

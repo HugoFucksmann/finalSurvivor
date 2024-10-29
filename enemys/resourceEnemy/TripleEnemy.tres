@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Enemy" load_steps=3 format=3 uid="uid://c735fybb2bbvx"]
+
+[ext_resource type="Script" path="res://enemys/enemyType.gd" id="1_evp5b"]
+[ext_resource type="Texture2D" uid="uid://cjs4ogw7av24u" path="res://assets/enemys/4 v1.png" id="2_y6h4b"]
+
+[resource]
+script = ExtResource("1_evp5b")
+title = "Eye Ghost"
+texture = ExtResource("2_y6h4b")
+health = 0.0
+damage = 20.0
