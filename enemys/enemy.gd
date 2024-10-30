@@ -27,5 +27,6 @@ func _physics_process(delta):
 	knockback = knockback.move_toward(Vector2.ZERO, 1)
 	velocity += knockback
 	var collider = move_and_collide(velocity * delta)
-	
+	if collider:
+		collider.get_collider().knockback = (collider.get_collider().global_position - global_position).normalized() * 50
  
