@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://byeini5meluaj"]
+[gd_scene load_steps=7 format=3 uid="uid://byeini5meluaj"]
 
 [ext_resource type="Script" path="res://players/player.gd" id="1_5louy"]
+[ext_resource type="PackedScene" uid="uid://b2r4uar4xulw2" path="res://items/weapons/slot.tscn" id="2_xibop"]
+[ext_resource type="Resource" uid="uid://bqub72l3e3pfc" path="res://items/weapons/resources/magicWard.tres" id="3_2o3ic"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gts41"]
 size = Vector2(20, 20)
@@ -11,6 +13,22 @@ size = Vector2(20, 20)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_5louy")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Weapons" type="HBoxContainer" parent="UI"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Slot" parent="UI/Weapons" instance=ExtResource("2_xibop")]
+layout_mode = 2
+weapon = ExtResource("3_2o3ic")
+
+[node name="Slot2" parent="UI/Weapons" instance=ExtResource("2_xibop")]
+layout_mode = 2
+
+[node name="Slot3" parent="UI/Weapons" instance=ExtResource("2_xibop")]
+layout_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("PlaceholderTexture2D_gts41")

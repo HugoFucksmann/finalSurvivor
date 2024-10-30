@@ -5,7 +5,7 @@ extends Node2D
 @export var enemy_pool : EnemyPool
 @export var enemy_types : Array[Enemy]
  
-var distance : float = 420
+var distance : float = 420	
 var can_spawn : bool = true
  
 var minute : int:
@@ -31,8 +31,15 @@ func spawn(pos: Vector2, elite: bool = false):
 	if not can_spawn and not elite:
 		return
 
-	var enemy_instance = enemy_pool.get_enemy()  # Obtén un enemigo del pool
-	enemy_instance.enemy_pool = enemy_pool  # Asigna la referencia al pool
+	var enemy_instance = enemy_pool.get_enemy() 
+	if enemy_instance == null:  
+		return  
+		
+	if enemy_instance.get_parent() != null:
+		
+		enemy_instance.get_parent().remove_child(enemy_instance)
+
+	enemy_instance.enemy_pool = enemy_pool  
 	enemy_instance.type = enemy_types[min(minute, enemy_types.size() - 1)]
 	enemy_instance.position = pos
 	enemy_instance.player_reference = player
@@ -43,20 +50,16 @@ func _on_timer_timeout():
 	second += 1
 	amount(second % 10)
  
- 
 func get_random_position() -> Vector2:
 	return player.position + distance * Vector2.RIGHT.rotated(randf_range(0, 2 * PI))
- 
  
 func amount(number : int = 1):
 	for i in range(number):
 		spawn(get_random_position())
  
- 
 func _on_pattern_timeout():
 	for i in range(75):
 		spawn(get_random_position())
- 
  
 func _on_elite_timeout():
 	spawn(get_random_position(), true)
