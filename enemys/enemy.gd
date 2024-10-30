@@ -30,3 +30,5 @@ func _physics_process(delta):
 	if collider:
 		collider.get_collider().knockback = (collider.get_collider().global_position - global_position).normalized() * 50
  
+func _on_death():
+	get_tree().current_scene.get_node("EnemyPool").return_enemy_to_pool(self)
