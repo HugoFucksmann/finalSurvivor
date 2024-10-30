@@ -2,7 +2,7 @@ extends Node2D
  
 @export var player : CharacterBody2D
 @export var enemy : PackedScene
- 
+@export var enemy_pool : EnemyPool
 @export var enemy_types : Array[Enemy]
  
 var distance : float = 420
@@ -27,13 +27,13 @@ func _physics_process(_delta):
 	else:
 		can_spawn = false
  
-func spawn(pos : Vector2, elite : bool = false):
+func spawn(pos: Vector2, elite: bool = false):
 	if not can_spawn and not elite:
 		return
- 
-	var enemy_instance = enemy.instantiate()
-	enemy_instance.type = enemy_types[min(minute, enemy_types.size()-1)]
-	enemy_instance.position = get_random_position()
+
+	var enemy_instance = enemy_pool.get_enemy()  # Obtén un enemigo del pool
+	enemy_instance.enemy_pool = enemy_pool  # Asigna la referencia al pool
+	enemy_instance.type = enemy_types[min(minute, enemy_types.size() - 1)]
 	enemy_instance.position = pos
 	enemy_instance.player_reference = player
 	enemy_instance.elite = elite
