@@ -56,6 +56,11 @@ offset_right = 526.0
 offset_bottom = 71.0
 text = "Lvl 1"
 
+[node name="Options" type="VBoxContainer" parent="UI"]
+unique_name_in_owner = true
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("PlaceholderTexture2D_gts41")
 
