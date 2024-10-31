@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="Enemy" load_steps=3 format=3 uid="uid://bx8g6wbc2icf7"]
+[gd_resource type="Resource" script_class="Enemy" load_steps=5 format=3 uid="uid://bx8g6wbc2icf7"]
 
+[ext_resource type="Script" path="res://pickupResource.gd" id="1_64kn2"]
 [ext_resource type="Script" path="res://enemys/enemyType.gd" id="1_dqpgu"]
 [ext_resource type="Texture2D" uid="uid://cebbvgsjyjj2u" path="res://assets/enemys/2 v1.png" id="2_8tcd2"]
+[ext_resource type="Resource" uid="uid://bxdvwe4dbdh78" path="res://resources/Pickups/blueGem.tres" id="2_r01kg"]
 
 [resource]
 script = ExtResource("1_dqpgu")
@@ -9,3 +11,4 @@ title = "EyeLegs"
 texture = ExtResource("2_8tcd2")
 health = 3.0
 damage = 5.0
+drops = Array[ExtResource("1_64kn2")]([ExtResource("2_r01kg")])

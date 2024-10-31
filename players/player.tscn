@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://byeini5meluaj"]
+[gd_scene load_steps=11 format=3 uid="uid://byeini5meluaj"]
 
 [ext_resource type="Script" path="res://players/player.gd" id="1_5louy"]
 [ext_resource type="PackedScene" uid="uid://b2r4uar4xulw2" path="res://items/weapons/slot.tscn" id="2_xibop"]
 [ext_resource type="Resource" uid="uid://bqub72l3e3pfc" path="res://items/weapons/resources/magicWard.tres" id="3_2o3ic"]
+[ext_resource type="Texture2D" uid="uid://qcebra1auw21" path="res://assets/progressBar/barEmpty.png" id="4_jruri"]
+[ext_resource type="Texture2D" uid="uid://d3jjr1ydrhe13" path="res://assets/progressBar/bartres.png" id="5_w22ha"]
+[ext_resource type="Texture2D" uid="uid://dij82ows2wgjo" path="res://assets/progressBar/barFull.png" id="6_r60qv"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gts41"]
 size = Vector2(20, 20)
@@ -11,14 +14,19 @@ size = Vector2(20, 20)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x7y5u"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_3jis4"]
+radius = 50.0
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_5louy")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="Weapons" type="HBoxContainer" parent="UI"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 21.0
+offset_top = 28.0
+offset_right = 149.0
+offset_bottom = 68.0
 
 [node name="Slot" parent="UI/Weapons" instance=ExtResource("2_xibop")]
 layout_mode = 2
@@ -29,6 +37,24 @@ layout_mode = 2
 
 [node name="Slot3" parent="UI/Weapons" instance=ExtResource("2_xibop")]
 layout_mode = 2
+
+[node name="XP" type="TextureProgressBar" parent="UI"]
+unique_name_in_owner = true
+offset_right = 40.0
+offset_bottom = 40.0
+max_value = 10.0
+texture_under = ExtResource("4_jruri")
+texture_over = ExtResource("5_w22ha")
+texture_progress = ExtResource("6_r60qv")
+
+[node name="Level" type="Label" parent="UI/XP"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 486.0
+offset_top = 48.0
+offset_right = 526.0
+offset_bottom = 71.0
+text = "Lvl 1"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("PlaceholderTexture2D_gts41")
@@ -58,5 +84,13 @@ autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
+[node name="Magnes" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Magnes"]
+shape = SubResource("CircleShape2D_3jis4")
+
 [connection signal="body_entered" from="SelfDamage" to="." method="_on_self_damage_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Magnes" to="." method="_on_magnes_area_entered"]
