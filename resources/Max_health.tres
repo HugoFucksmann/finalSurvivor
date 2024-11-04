@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="PassiveItem" load_steps=7 format=3 uid="uid://w0rvccnilkt3"]
+
+[ext_resource type="Script" path="res://resources/PassiveItem.gd" id="1_kl4pf"]
+[ext_resource type="Texture2D" uid="uid://cg515dsy6tirc" path="res://assets/hearth.png" id="2_tpurb"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="3_0midv"]
+
+[sub_resource type="Resource" id="Resource_whqof"]
+script = ExtResource("3_0midv")
+description = "+25 health"
+max_health = 25.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+
+[sub_resource type="Resource" id="Resource_wpoch"]
+script = ExtResource("3_0midv")
+description = "+35 health"
+max_health = 35.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+
+[sub_resource type="Resource" id="Resource_d2t35"]
+script = ExtResource("3_0midv")
+description = "+55 health"
+max_health = 55.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+
+[resource]
+script = ExtResource("1_kl4pf")
+upgrades = Array[ExtResource("3_0midv")]([SubResource("Resource_whqof"), SubResource("Resource_wpoch"), SubResource("Resource_d2t35")])
+title = "Max_Health"
+texture = ExtResource("2_tpurb")

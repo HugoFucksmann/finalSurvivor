@@ -9,7 +9,6 @@ collision_layer = 4
 script = ExtResource("1_nf06g")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.012, 0.012)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ll4ih")

@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="SingleShot" load_steps=11 format=3 uid="uid://bqub72l3e3pfc"]
+[gd_resource type="Resource" script_class="SingleShot" load_steps=13 format=3 uid="uid://bqub72l3e3pfc"]
 
+[ext_resource type="Resource" uid="uid://cgkx1kexb2mdt" path="res://resources/Weapons/HollyWand.tres" id="1_a50q5"]
 [ext_resource type="PackedScene" uid="uid://co8ohhjrktowf" path="res://items/projectile/projectile.tscn" id="1_p0lek"]
 [ext_resource type="Script" path="res://items/projectile/singleShot.gd" id="2_36lnb"]
+[ext_resource type="Resource" uid="uid://c6pcx4alilthx" path="res://resources/Magnet.tres" id="2_p8hwg"]
 [ext_resource type="Texture2D" uid="uid://4oaulv7c7n01" path="res://assets/weapons/magic-Photoroom.png" id="3_l741j"]
 [ext_resource type="Script" path="res://Ui/Upgrade.gd" id="4_5l6gf"]
 [ext_resource type="Script" path="res://projectileUpgrade.gd" id="5_tfump"]
@@ -43,10 +45,12 @@ description = "-0.2 cooldown"
 
 [resource]
 script = ExtResource("2_36lnb")
-title = "Magic Ward"
-texture = ExtResource("3_l741j")
 damage = 1.0
-cooldown = 0.25
-speed = 400.0
+cooldown = 1.0
+speed = 200.0
 projectile_node = ExtResource("1_p0lek")
 upgrades = Array[ExtResource("4_5l6gf")]([SubResource("Resource_rbln4"), SubResource("Resource_mybou"), SubResource("Resource_i3wbf"), SubResource("Resource_xpawr"), SubResource("Resource_3a5yw")])
+item_needed = ExtResource("2_p8hwg")
+evolution = ExtResource("1_a50q5")
+title = "Magic Ward"
+texture = ExtResource("3_l741j")

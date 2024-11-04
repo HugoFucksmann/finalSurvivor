@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="PassiveItem" load_steps=7 format=3 uid="uid://do6kavrevydmc"]
+
+[ext_resource type="Script" path="res://resources/PassiveItem.gd" id="1_bpngi"]
+[ext_resource type="Texture2D" uid="uid://4w5yx0ualcfl" path="res://assets/Might_pluma.png" id="2_msvvj"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="3_2baac"]
+
+[sub_resource type="Resource" id="Resource_3kqp1"]
+script = ExtResource("3_2baac")
+description = "+10% Increase Damage"
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.1
+area = 0.0
+magnet = 0.0
+growth = 0.0
+
+[sub_resource type="Resource" id="Resource_l5yck"]
+script = ExtResource("3_2baac")
+description = "20% Increase Damage"
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.2
+area = 0.0
+magnet = 0.0
+growth = 0.0
+
+[sub_resource type="Resource" id="Resource_raq8a"]
+script = ExtResource("3_2baac")
+description = "30% Increase Damage"
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.3
+area = 0.0
+magnet = 0.0
+growth = 0.0
+
+[resource]
+script = ExtResource("1_bpngi")
+upgrades = Array[ExtResource("3_2baac")]([SubResource("Resource_3kqp1"), SubResource("Resource_l5yck"), SubResource("Resource_raq8a")])
+title = "Might"
+texture = ExtResource("2_msvvj")

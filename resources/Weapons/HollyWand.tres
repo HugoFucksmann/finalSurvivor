@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=5 format=3 uid="uid://cgkx1kexb2mdt"]
+
+[ext_resource type="PackedScene" uid="uid://co8ohhjrktowf" path="res://items/projectile/projectile.tscn" id="1_65jyd"]
+[ext_resource type="Script" path="res://items/weapons/weapon.gd" id="2_6wat6"]
+[ext_resource type="Texture2D" uid="uid://vlrpa1fooagj" path="res://assets/weapons/HollyWand.png" id="3_44osi"]
+[ext_resource type="Script" path="res://Ui/Upgrade.gd" id="4_6ajy3"]
+
+[resource]
+script = ExtResource("2_6wat6")
+damage = 10.0
+cooldown = 0.1
+speed = 500.0
+projectile_node = ExtResource("1_65jyd")
+upgrades = Array[ExtResource("4_6ajy3")]([])
+title = "Holy Wand"
+texture = ExtResource("3_44osi")

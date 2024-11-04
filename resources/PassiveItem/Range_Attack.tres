@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="PassiveItem" load_steps=7 format=3 uid="uid://pqj6fq3d6j1k"]
+
+[ext_resource type="Script" path="res://resources/PassiveItem.gd" id="1_gscif"]
+[ext_resource type="Texture2D" uid="uid://cmuiq4nixlra5" path="res://assets/Book_range.png" id="2_hmj5u"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="3_grnpq"]
+
+[sub_resource type="Resource" id="Resource_acm0h"]
+script = ExtResource("3_grnpq")
+description = "+15 Attack Range"
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 15.0
+magnet = 0.0
+growth = 0.0
+
+[sub_resource type="Resource" id="Resource_h4ty5"]
+script = ExtResource("3_grnpq")
+description = "+25 Attack Range"
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 25.0
+magnet = 0.0
+growth = 0.0
+
+[sub_resource type="Resource" id="Resource_vhieb"]
+script = ExtResource("3_grnpq")
+description = "+ 35 Attack Range"
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 35.0
+magnet = 0.0
+growth = 0.0
+
+[resource]
+script = ExtResource("1_gscif")
+upgrades = Array[ExtResource("3_grnpq")]([SubResource("Resource_acm0h"), SubResource("Resource_h4ty5"), SubResource("Resource_vhieb")])
+title = "Rage"
+texture = ExtResource("2_hmj5u")

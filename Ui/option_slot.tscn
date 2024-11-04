@@ -2,12 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://4oaulv7c7n01" path="res://assets/weapons/magic-Photoroom.png" id="1_ebb02"]
 [ext_resource type="Script" path="res://Ui/option_slot.gd" id="2_lcgpe"]
-[ext_resource type="Texture2D" uid="uid://ci1qkfxjqlqop" path="res://assets/slots/slot.png" id="3_imcwg"]
+[ext_resource type="Texture2D" uid="uid://d1fmcm4svmb1h" path="res://assets/ui/panel.jpg" id="3_5u2sk"]
 
 [node name="OptionSlot" type="TextureButton"]
 custom_minimum_size = Vector2(315, 40)
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 315.0
+offset_bottom = 41.0
 mouse_filter = 1
 texture_normal = ExtResource("1_ebb02")
 ignore_texture_size = true
@@ -16,20 +16,20 @@ script = ExtResource("2_lcgpe")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 38.0
-offset_top = 8.0
-offset_right = 87.0
-offset_bottom = 31.0
+offset_left = 92.0
+offset_top = 4.0
+offset_right = 141.0
+offset_bottom = 27.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Lvl 2"
 
 [node name="Description" type="Label" parent="."]
 layout_mode = 0
-offset_left = 88.0
-offset_top = 7.0
-offset_right = 283.0
-offset_bottom = 30.0
+offset_left = 150.0
+offset_top = 4.0
+offset_right = 309.0
+offset_bottom = 32.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "test"
@@ -38,9 +38,9 @@ text = "test"
 show_behind_parent = true
 custom_minimum_size = Vector2(315, 40)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("3_imcwg")
+offset_right = 315.0
+offset_bottom = 42.0
+texture = ExtResource("3_5u2sk")
 region_rect = Rect2(49.4456, 72.3551, 1871.45, 1862.5)
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
