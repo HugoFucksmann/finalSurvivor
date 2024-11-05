@@ -7,7 +7,7 @@ extends PanelContainer
 		$Cooldown.wait_time = value.cooldown
 		item.slot = self
 
-func _on_cooldown_timeout() -> void:
+func _on_cooldown_timeout():
 	if item:
 		$Cooldown.wait_time = item.cooldown
 		item.activate(owner, owner.nearest_enemy, get_tree())

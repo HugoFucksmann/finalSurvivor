@@ -50,7 +50,7 @@ func show_option():
 			var option_slot = OptionSlot.instantiate()
 			option_slot.item = weapon
 			add_child(option_slot)
-			option_slot += 1
+			option_size += 1
 		
 	for passive_item in passive_item_aviable:
 		option_size += add_option(passive_item)

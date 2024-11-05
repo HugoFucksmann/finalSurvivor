@@ -53,7 +53,7 @@ var camera_pan_velocity = Vector2.ZERO
 func _physics_process(delta):
 	if is_instance_valid(nearest_enemy):
 		nearest_enemy_distance = nearest_enemy.separation
-		print(nearest_enemy.name)
+		
 	else:
 		nearest_enemy_distance = 150 + area
 		nearest_enemy = null
@@ -81,7 +81,7 @@ func _physics_process(delta):
  
 func take_damage(amount):
 	health -= max(amount - armor, 0)
-	print(amount)
+	print("damage: ", amount)
  
 func _on_self_damage_body_entered(body):
 	take_damage(body.damage)
