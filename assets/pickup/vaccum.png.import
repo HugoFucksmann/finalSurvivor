@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbhna2p6fdheb"
-path="res://.godot/imported/wing_speed.png-d445dc63a046b5801fb4a6f079b41fe9.ctex"
+uid="uid://cbimmxufhifxh"
+path="res://.godot/imported/vaccum.png-5b3500302f7aeeef171fa2c9a59279ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/wing_speed.png"
-dest_files=["res://.godot/imported/wing_speed.png-d445dc63a046b5801fb4a6f079b41fe9.ctex"]
+source_file="res://assets/pickup/vaccum.png"
+dest_files=["res://.godot/imported/vaccum.png-5b3500302f7aeeef171fa2c9a59279ce.ctex"]
 
 [params]
 

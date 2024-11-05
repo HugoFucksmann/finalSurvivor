@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Death" load_steps=3 format=3 uid="uid://cca6y3avqqgeh"]
+
+[ext_resource type="Texture2D" uid="uid://bxmtmq6vlkvs4" path="res://assets/pickup/death.png" id="1_oxs3c"]
+[ext_resource type="Script" path="res://pickup/Death.gd" id="2_gbh1i"]
+
+[resource]
+script = ExtResource("2_gbh1i")
+title = "Death"
+icon = ExtResource("1_oxs3c")
+description = "Destroy every enemy"

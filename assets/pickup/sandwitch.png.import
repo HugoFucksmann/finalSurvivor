@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2oscy5w3l7gd"
-path="res://.godot/imported/Tileset.png-402d245cdc555f1a3f9839d804fa62f8.ctex"
+uid="uid://d13vt4juga3rk"
+path="res://.godot/imported/sandwitch.png-1d59f608467fbd823f27f693d1902161.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tileMap/Tileset.png"
-dest_files=["res://.godot/imported/Tileset.png-402d245cdc555f1a3f9839d804fa62f8.ctex"]
+source_file="res://assets/pickup/sandwitch.png"
+dest_files=["res://.godot/imported/sandwitch.png-1d59f608467fbd823f27f693d1902161.ctex"]
 
 [params]
 

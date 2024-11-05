@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://53r7lpx8oq0t"
-path="res://.godot/imported/Mockup1.png-c8076868677b656ca252a36f9915290b.ctex"
+uid="uid://62goqorkirb5"
+path="res://.godot/imported/goldCoint.png-4bb284af6a9a28c5b06bd69a9613e111.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tileMap/Mockup1.png"
-dest_files=["res://.godot/imported/Mockup1.png-c8076868677b656ca252a36f9915290b.ctex"]
+source_file="res://assets/ui/goldCoint.png"
+dest_files=["res://.godot/imported/goldCoint.png-4bb284af6a9a28c5b06bd69a9613e111.ctex"]
 
 [params]
 

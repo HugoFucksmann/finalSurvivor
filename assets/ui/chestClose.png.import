@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cr41ys0u1hfvv"
-path="res://.godot/imported/armor.png-7969b140c50e154aedeaeb60a071ac9b.ctex"
+uid="uid://dnbs0gs6lir6u"
+path="res://.godot/imported/chestClose.png-f87f1c164d91c8898d87a8aa5f387f06.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/armor.png"
-dest_files=["res://.godot/imported/armor.png-7969b140c50e154aedeaeb60a071ac9b.ctex"]
+source_file="res://assets/ui/chestClose.png"
+dest_files=["res://.godot/imported/chestClose.png-f87f1c164d91c8898d87a8aa5f387f06.ctex"]
 
 [params]
 

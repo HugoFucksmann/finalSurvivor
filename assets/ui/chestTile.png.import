@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmuiq4nixlra5"
-path="res://.godot/imported/Book_range.png-f8f207d368989f312441ff47e004ba5c.ctex"
+uid="uid://57v0x1chrnug"
+path="res://.godot/imported/chestTile.png-1ff59d6378e927fb89dc001f155fe7cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Book_range.png"
-dest_files=["res://.godot/imported/Book_range.png-f8f207d368989f312441ff47e004ba5c.ctex"]
+source_file="res://assets/ui/chestTile.png"
+dest_files=["res://.godot/imported/chestTile.png-1ff59d6378e927fb89dc001f155fe7cc.ctex"]
 
 [params]
 

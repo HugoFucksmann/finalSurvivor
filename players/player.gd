@@ -14,10 +14,15 @@ var max_health : float = 100.0 :
 var recovery : float = 0
 var area : float = 0
 var movement_speed : float = 150
-var nearest_enemy : CharacterBody2D
+var nearest_enemy
 var nearest_enemy_distance : float = 150 + area
 var armor : float = 0
 var might : float = 1.5
+
+var gold : int = 0:
+	set(value):
+		gold = value
+		%Gold.text = "Gold: " + str(value)
 
 var magnet : float = 0:
 	set(value):
@@ -44,11 +49,11 @@ var level: int = 1:
 
 		
 @onready var camera = $Camera2D
-var camera_smoothing_speed = 10.0
-var camera_limits = Rect2(0, 0, 1024, 600)
-var camera_pan_speed = 500.0
-var camera_pan_acceleration = 50.0
-var camera_pan_velocity = Vector2.ZERO
+#var camera_smoothing_speed = 10.0
+#var camera_limits = Rect2(0, 0, 1024, 600)
+#var camera_pan_speed = 500.0
+#var camera_pan_acceleration = 50.0
+#var camera_pan_velocity = Vector2.ZERO
 
 func _physics_process(delta):
 	if is_instance_valid(nearest_enemy):
@@ -62,11 +67,11 @@ func _physics_process(delta):
 	check_XP()
 	health += recovery * delta 
 	var target_position = global_position
-	target_position.x = clamp(target_position.x, camera_limits.position.x, camera_limits.end.x)
-	target_position.y = clamp(target_position.y, camera_limits.position.y, camera_limits.end.y)
-	camera.global_position = camera.global_position.lerp(target_position, delta * camera_smoothing_speed)
-	camera.global_position += camera_pan_velocity * delta
-	camera_pan_velocity = camera_pan_velocity.move_toward(Vector2.ZERO, camera_pan_speed * delta)
+	#target_position.x = clamp(target_position.x, camera_limits.position.x, camera_limits.end.x)
+	#target_position.y = clamp(target_position.y, camera_limits.position.y, camera_limits.end.y)
+	#camera.global_position = camera.global_position.lerp(target_position, delta * camera_smoothing_speed)
+	#camera.global_position += camera_pan_velocity * delta
+	#camera_pan_velocity = camera_pan_velocity.move_toward(Vector2.ZERO, camera_pan_speed * delta)
 	
 	
 #	if velocity == Vector2.ZERO:
@@ -102,3 +107,9 @@ func check_XP():
 func _on_magnes_area_entered(area: Area2D) -> void:
 	if area.has_method("follow"):
 		area.follow(self)
+
+func gain_gold(amount):
+	gold += amount
+
+func open_chest():
+	$UI/Chest.open()

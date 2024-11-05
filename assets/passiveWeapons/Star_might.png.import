@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b1bc8jahp0xhb"
-path="res://.godot/imported/Star_might.png-aea6b7ef5d66cec1e6ac1f58c14a0a04.ctex"
+path="res://.godot/imported/Star_might.png-f941e519416afd5d48981e474ce7e6fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Star_might.png"
-dest_files=["res://.godot/imported/Star_might.png-aea6b7ef5d66cec1e6ac1f58c14a0a04.ctex"]
+source_file="res://assets/passiveWeapons/Star_might.png"
+dest_files=["res://.godot/imported/Star_might.png-f941e519416afd5d48981e474ce7e6fb.ctex"]
 
 [params]
 

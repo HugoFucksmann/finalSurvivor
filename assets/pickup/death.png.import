@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3i4epg30ouuh"
-path="res://.godot/imported/Mockup3.png-0e7932d2f960b8e5abd05f3680acf02c.ctex"
+uid="uid://bxmtmq6vlkvs4"
+path="res://.godot/imported/death.png-0e941a724117c7d029ac2504e0e5cf30.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tileMap/Mockup3.png"
-dest_files=["res://.godot/imported/Mockup3.png-0e7932d2f960b8e5abd05f3680acf02c.ctex"]
+source_file="res://assets/pickup/death.png"
+dest_files=["res://.godot/imported/death.png-0e941a724117c7d029ac2504e0e5cf30.ctex"]
 
 [params]
 

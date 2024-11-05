@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by8qtqggtr41w"
-path="res://.godot/imported/Mockup2.png-954e7ec479915a80f04da9f017b0c9c7.ctex"
+uid="uid://bele70w2wexx5"
+path="res://.godot/imported/torch.png-05a5b52cb4e45c268269f0ae1c8539df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tileMap/Mockup2.png"
-dest_files=["res://.godot/imported/Mockup2.png-954e7ec479915a80f04da9f017b0c9c7.ctex"]
+source_file="res://assets/pickup/torch.png"
+dest_files=["res://.godot/imported/torch.png-05a5b52cb4e45c268269f0ae1c8539df.ctex"]
 
 [params]
 

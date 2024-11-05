@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vgdr2kfli2q8"
-path="res://.godot/imported/batery_recovery.png-d78bbaf73b0baf7d249db21d335a00a3.ctex"
+uid="uid://4w5yx0ualcfl"
+path="res://.godot/imported/Might_pluma.png-c7ff7eb4fd22ee579ad227d9fdeb5b6d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/batery_recovery.png"
-dest_files=["res://.godot/imported/batery_recovery.png-d78bbaf73b0baf7d249db21d335a00a3.ctex"]
+source_file="res://assets/passiveWeapons/Might_pluma.png"
+dest_files=["res://.godot/imported/Might_pluma.png-c7ff7eb4fd22ee579ad227d9fdeb5b6d.ctex"]
 
 [params]
 

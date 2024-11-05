@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://boo37l4d0vqqx"]
+
+[ext_resource type="Texture2D" uid="uid://bele70w2wexx5" path="res://assets/pickup/torch.png" id="1_jrr0a"]
+[ext_resource type="Script" path="res://pickup/destructible.gd" id="2_eesic"]
+[ext_resource type="Script" path="res://pickupResource.gd" id="3_d1s7c"]
+[ext_resource type="Resource" uid="uid://cllh1m6ylw0w7" path="res://resources/Pickups/Vaccum.tres" id="4_6ihi3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wsy0p"]
+radius = 40.0
+height = 360.0
+
+[sub_resource type="Gradient" id="Gradient_3pw8c"]
+offsets = PackedFloat32Array(0, 0.570175, 0.837719)
+colors = PackedColorArray(1, 1, 1, 1, 0.324607, 0.324607, 0.324607, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_up18q"]
+gradient = SubResource("Gradient_3pw8c")
+fill = 1
+fill_from = Vector2(0.495726, 0.492877)
+fill_to = Vector2(0.854701, 0.128205)
+
+[node name="Destructible" type="Sprite2D"]
+position = Vector2(-1, -1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_jrr0a")
+script = ExtResource("2_eesic")
+drops = Array[ExtResource("3_d1s7c")]([ExtResource("4_6ihi3")])
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_wsy0p")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(6.10352e-05, 10.0001)
+scale = Vector2(30.1562, 31.0938)
+color = Color(0.901961, 0.870588, 0.14902, 1)
+texture = SubResource("GradientTexture2D_up18q")

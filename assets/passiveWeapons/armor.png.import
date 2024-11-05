@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4w5yx0ualcfl"
-path="res://.godot/imported/Might_pluma.png-48a9470c429df06f6766fd15bb00e6ac.ctex"
+uid="uid://cr41ys0u1hfvv"
+path="res://.godot/imported/armor.png-b315240fd1ef91ab9ee2e8edb49fae86.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Might_pluma.png"
-dest_files=["res://.godot/imported/Might_pluma.png-48a9470c429df06f6766fd15bb00e6ac.ctex"]
+source_file="res://assets/passiveWeapons/armor.png"
+dest_files=["res://.godot/imported/armor.png-b315240fd1ef91ab9ee2e8edb49fae86.ctex"]
 
 [params]
 
