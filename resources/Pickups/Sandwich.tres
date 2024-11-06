@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Health" load_steps=3 format=3 uid="uid://pw24av71m4s1"]
+[gd_resource type="Resource" script_class="Health" load_steps=4 format=3 uid="uid://pw24av71m4s1"]
 
 [ext_resource type="Texture2D" uid="uid://d13vt4juga3rk" path="res://assets/pickup/sandwitch.png" id="1_fdca6"]
 [ext_resource type="Script" path="res://pickup/Health.gd" id="2_fmedn"]
+[ext_resource type="AudioStream" uid="uid://n5qrf14ak0wd" path="res://assets/Sounds/Minifantasy_Dungeon_SFX/01_chest_open_4.wav" id="3_6gdl2"]
 
 [resource]
 script = ExtResource("2_fmedn")
@@ -9,3 +10,4 @@ amount = 20
 title = "Sandwitch"
 icon = ExtResource("1_fdca6")
 description = "+20 Health"
+sound = ExtResource("3_6gdl2")

@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Gem" load_steps=3 format=3 uid="uid://cpso5c8q7v83j"]
+[gd_resource type="Resource" script_class="Gem" load_steps=4 format=3 uid="uid://cpso5c8q7v83j"]
 
 [ext_resource type="Texture2D" uid="uid://c3pnm5cblgxih" path="res://assets/gems/greengem.png" id="1_4u1jm"]
 [ext_resource type="Script" path="res://pickup/gem.gd" id="2_qkioh"]
+[ext_resource type="AudioStream" uid="uid://p64f0bp1kgnc" path="res://assets/Sounds/Minifantasy_Dungeon_SFX/01_chest_open_2.wav" id="3_tskc3"]
 
 [resource]
 script = ExtResource("2_qkioh")
@@ -9,3 +10,4 @@ XP = 2.0
 title = "Green Gem"
 icon = ExtResource("1_4u1jm")
 description = "Gem experience"
+sound = ExtResource("3_tskc3")

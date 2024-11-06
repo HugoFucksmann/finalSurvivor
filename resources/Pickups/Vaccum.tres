@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="PickupMagnet" load_steps=3 format=3 uid="uid://cllh1m6ylw0w7"]
+[gd_resource type="Resource" script_class="PickupMagnet" load_steps=4 format=3 uid="uid://cllh1m6ylw0w7"]
 
 [ext_resource type="Texture2D" uid="uid://cbimmxufhifxh" path="res://assets/pickup/vaccum.png" id="1_ca5rl"]
 [ext_resource type="Script" path="res://pickup/Vaccum.gd" id="2_du44b"]
+[ext_resource type="AudioStream" uid="uid://i5feh4niqvqe" path="res://assets/Sounds/Minifantasy_Dungeon_SFX/02_chest_close_2.wav" id="3_c3lse"]
 
 [resource]
 script = ExtResource("2_du44b")
 title = "Vaccum"
 icon = ExtResource("1_ca5rl")
 description = "Gets all the gems"
+sound = ExtResource("3_c3lse")

@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Gold" load_steps=3 format=3 uid="uid://dv8i7sfalfl4v"]
+[gd_resource type="Resource" script_class="Gold" load_steps=4 format=3 uid="uid://dv8i7sfalfl4v"]
 
 [ext_resource type="Texture2D" uid="uid://dyudn64yv43cc" path="res://assets/ui/gold.png" id="1_1vpga"]
 [ext_resource type="Script" path="res://Ui/Gold.gd" id="2_x131h"]
+[ext_resource type="AudioStream" uid="uid://c3awnlt8vcgbw" path="res://assets/Sounds/Minifantasy_Dungeon_SFX/02_chest_close_1.wav" id="3_dt6ve"]
 
 [resource]
 script = ExtResource("2_x131h")
@@ -9,3 +10,4 @@ gold = 5
 title = "Gold"
 icon = ExtResource("1_1vpga")
 description = "+5 Gold"
+sound = ExtResource("3_dt6ve")
