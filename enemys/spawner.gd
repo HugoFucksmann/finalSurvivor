@@ -28,20 +28,13 @@ func _physics_process(_delta):
 	else:
 		can_spawn = false
  
-func spawn(pos: Vector2, elite: bool = false):
+func spawn(pos : Vector2, elite : bool = false):
 	if not can_spawn and not elite:
 		return
-
-	var enemy_instance = enemy_pool.get_enemy() 
-	if enemy_instance == null:  
-		return  
-		
-	if enemy_instance.get_parent() != null:
-		
-		enemy_instance.get_parent().remove_child(enemy_instance)
-
-	enemy_instance.enemy_pool = enemy_pool  
-	enemy_instance.type = enemy_types[min(minute, enemy_types.size() - 1)]
+ 
+	var enemy_instance = enemy.instantiate()
+	enemy_instance.type = enemy_types[min(minute, enemy_types.size()-1)]
+	#enemy_instance.position = get_random_position()
 	enemy_instance.position = pos
 	enemy_instance.player_reference = player
 	enemy_instance.elite = elite

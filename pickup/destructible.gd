@@ -1,13 +1,13 @@
 extends Sprite2D
 
 var frame_counter = 0
-
+var separation : float
 var health : float = 10:
 	set(value):
 		health = value
 		if health < 0:
 			drop_item()
-var separation : float
+
 @onready var player_reference = get_tree().current_scene.find_child("Player")
 var drop_node = preload("res://sceenes/pickup.tscn")
 @export var drops : Array[Pickups]
@@ -17,7 +17,7 @@ func _physics_process(_delta):
 	frame_counter += 1
 	if frame_counter >= 6:
 		frame_counter = 0
-		frame = (frame + 1) % 8
+		frame = (frame + 1) % (hframes * vframes)
  
 	separation = (player_reference.position - position).length()
 	if separation < player_reference.nearest_enemy_distance:
