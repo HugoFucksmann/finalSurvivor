@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://byeini5meluaj"]
+[gd_scene load_steps=30 format=3 uid="uid://byeini5meluaj"]
 
 [ext_resource type="Script" path="res://players/player.gd" id="1_5louy"]
 [ext_resource type="PackedScene" uid="uid://b2r4uar4xulw2" path="res://items/weapons/slot.tscn" id="2_xibop"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d1fmcm4svmb1h" path="res://assets/ui/panel.jpg" id="3_6316y"]
 [ext_resource type="Texture2D" uid="uid://qcebra1auw21" path="res://assets/progressBar/barEmpty.png" id="4_jruri"]
 [ext_resource type="Texture2D" uid="uid://d3jjr1ydrhe13" path="res://assets/progressBar/bartres.png" id="5_w22ha"]
+[ext_resource type="Resource" uid="uid://dr4ebscsks6h1" path="res://resources/Weapons/Asteroid.tres" id="6_g5vpb"]
 [ext_resource type="Texture2D" uid="uid://dij82ows2wgjo" path="res://assets/progressBar/barFull.png" id="6_r60qv"]
 [ext_resource type="PackedScene" uid="uid://duiwskv1138er" path="res://sceenes/passive_slot.tscn" id="6_y4xvh"]
 [ext_resource type="Script" path="res://players/options.gd" id="7_5b1cm"]
@@ -152,6 +153,7 @@ item = ExtResource("3_2o3ic")
 
 [node name="Slot2" parent="UI/Weapons" instance=ExtResource("2_xibop")]
 layout_mode = 2
+item = ExtResource("6_g5vpb")
 
 [node name="Slot3" parent="UI/Weapons" instance=ExtResource("2_xibop")]
 layout_mode = 2
