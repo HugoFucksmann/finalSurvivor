@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://byeini5meluaj"]
+[gd_scene load_steps=41 format=3 uid="uid://byeini5meluaj"]
 
 [ext_resource type="Script" path="res://players/player.gd" id="1_5louy"]
 [ext_resource type="PackedScene" uid="uid://b2r4uar4xulw2" path="res://items/weapons/slot.tscn" id="2_xibop"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://68n54hq1wm8x" path="res://assets/ui/bg.png" id="12_0aw4c"]
 [ext_resource type="Script" path="res://Ui/chest.gd" id="13_yrefl"]
 [ext_resource type="Texture2D" uid="uid://57v0x1chrnug" path="res://assets/ui/chestTile.png" id="15_acq8h"]
+[ext_resource type="Texture2D" uid="uid://dqsg26i6u400f" path="res://assets/player/character.png" id="19_jgoxw"]
 
 [sub_resource type="Gradient" id="Gradient_nsmpd"]
 offsets = PackedFloat32Array(0, 0.220588, 1)
@@ -91,15 +92,88 @@ shadow_size = 1
 shadow_offset = Vector2(3, 3)
 anti_aliasing = false
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gts41"]
-size = Vector2(20, 20)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ea1yd"]
+atlas = ExtResource("19_jgoxw")
+region = Rect2(0, 96, 32, 32)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_fvasa"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ot1g"]
+atlas = ExtResource("19_jgoxw")
+region = Rect2(32, 96, 32, 32)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_x7y5u"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0b3lx"]
+atlas = ExtResource("19_jgoxw")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1ku6"]
+atlas = ExtResource("19_jgoxw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m62ga"]
+atlas = ExtResource("19_jgoxw")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jau1g"]
+atlas = ExtResource("19_jgoxw")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2pph"]
+atlas = ExtResource("19_jgoxw")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k368j"]
+atlas = ExtResource("19_jgoxw")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3bhjc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ea1yd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ot1g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0b3lx")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1ku6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m62ga")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jau1g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2pph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k368j")
+}],
+"loop": true,
+"name": &"run",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20rfm"]
+size = Vector2(20, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rmy3d"]
+size = Vector2(20, 27)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3jis4"]
-radius = 50.0
+radius = 51.0098
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(538, 976)
@@ -329,11 +403,15 @@ offset_bottom = 168.0
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("PlaceholderTexture2D_gts41")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 1)
+sprite_frames = SubResource("SpriteFrames_3bhjc")
+animation = &"run"
+frame_progress = 0.41457
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_fvasa")
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_20rfm")
 
 [node name="SelfDamage" type="Area2D" parent="."]
 collision_layer = 0
@@ -341,7 +419,8 @@ collision_mask = 2
 
 [node name="Collision" type="CollisionShape2D" parent="SelfDamage"]
 unique_name_in_owner = true
-shape = SubResource("CircleShape2D_x7y5u")
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_rmy3d")
 
 [node name="Health" type="ProgressBar" parent="."]
 unique_name_in_owner = true
@@ -364,7 +443,6 @@ collision_mask = 4
 
 [node name="Magnet" type="CollisionShape2D" parent="Magnes"]
 unique_name_in_owner = true
-position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_3jis4")
 
 [connection signal="pressed" from="UI/Chest/Open" to="UI/Chest" method="_on_open_pressed"]

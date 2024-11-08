@@ -49,11 +49,7 @@ var level: int = 1:
 
 		
 @onready var camera = $Camera2D
-#var camera_smoothing_speed = 10.0
-#var camera_limits = Rect2(0, 0, 1024, 600)
-#var camera_pan_speed = 500.0
-#var camera_pan_acceleration = 50.0
-#var camera_pan_velocity = Vector2.ZERO
+
 
 func _physics_process(delta):
 	if is_instance_valid(nearest_enemy):
@@ -67,22 +63,16 @@ func _physics_process(delta):
 	check_XP()
 	health += recovery * delta 
 	var target_position = global_position
-	#target_position.x = clamp(target_position.x, camera_limits.position.x, camera_limits.end.x)
-	#target_position.y = clamp(target_position.y, camera_limits.position.y, camera_limits.end.y)
-	#camera.global_position = camera.global_position.lerp(target_position, delta * camera_smoothing_speed)
-	#camera.global_position += camera_pan_velocity * delta
-	#camera_pan_velocity = camera_pan_velocity.move_toward(Vector2.ZERO, camera_pan_speed * delta)
-	
-	
-#	if velocity == Vector2.ZERO:
-#		$AnimationPlayer.play("idle")
-#	else:
-#		$AnimationPlayer.play("run")
+
+	if velocity == Vector2.ZERO:
+		$AnimatedSprite2D.play("idle")
+	else:
+		$AnimatedSprite2D.play("run")
  
 	if velocity.x < 0:
-		$Sprite2D.flip_h = true
+		$AnimatedSprite2D.flip_h = true
 	elif velocity.x > 0:
-		$Sprite2D.flip_h = false
+		$AnimatedSprite2D.flip_h = false
  
 func take_damage(amount):
 	health -= max(amount - armor, 0)
