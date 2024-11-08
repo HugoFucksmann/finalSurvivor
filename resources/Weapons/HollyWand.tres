@@ -13,4 +13,5 @@ speed = 500.0
 projectile_node = ExtResource("1_65jyd")
 upgrades = Array[ExtResource("4_6ajy3")]([])
 title = "Holy Wand"
+icon = ExtResource("3_44osi")
 texture = ExtResource("3_44osi")

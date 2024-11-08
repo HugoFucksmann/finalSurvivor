@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PassiveItem" load_steps=7 format=3 uid="uid://do6kavrevydmc"]
 
 [ext_resource type="Script" path="res://resources/PassiveItem.gd" id="1_bpngi"]
-[ext_resource type="Texture2D" uid="uid://4w5yx0ualcfl" path="res://assets/Might_pluma.png" id="2_msvvj"]
+[ext_resource type="Texture2D" uid="uid://4w5yx0ualcfl" path="res://assets/passiveWeapons/Might_pluma.png" id="2_msvvj"]
 [ext_resource type="Script" path="res://resources/stats.gd" id="3_2baac"]
 
 [sub_resource type="Resource" id="Resource_3kqp1"]
@@ -44,4 +44,5 @@ growth = 0.0
 script = ExtResource("1_bpngi")
 upgrades = Array[ExtResource("3_2baac")]([SubResource("Resource_3kqp1"), SubResource("Resource_l5yck"), SubResource("Resource_raq8a")])
 title = "Might"
+icon = ExtResource("2_msvvj")
 texture = ExtResource("2_msvvj")

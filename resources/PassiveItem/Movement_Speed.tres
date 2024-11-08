@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PassiveItem" load_steps=7 format=3 uid="uid://2q7nq6b2y1u1"]
 
 [ext_resource type="Script" path="res://resources/PassiveItem.gd" id="1_wpidx"]
-[ext_resource type="Texture2D" uid="uid://bbhna2p6fdheb" path="res://assets/wing_speed.png" id="2_x6la8"]
+[ext_resource type="Texture2D" uid="uid://bbhna2p6fdheb" path="res://assets/passiveWeapons/wing_speed.png" id="2_x6la8"]
 [ext_resource type="Script" path="res://resources/stats.gd" id="3_mggpp"]
 
 [sub_resource type="Resource" id="Resource_isb1y"]
@@ -44,4 +44,5 @@ growth = 0.0
 script = ExtResource("1_wpidx")
 upgrades = Array[ExtResource("3_mggpp")]([SubResource("Resource_isb1y"), SubResource("Resource_6fp7j"), SubResource("Resource_vn6lk")])
 title = "Movement_Speed"
+icon = ExtResource("2_x6la8")
 texture = ExtResource("2_x6la8")

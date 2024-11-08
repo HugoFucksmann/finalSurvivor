@@ -1,19 +1,65 @@
-[gd_resource type="Resource" script_class="Circular" load_steps=5 format=3 uid="uid://dr4ebscsks6h1"]
+[gd_resource type="Resource" script_class="Circular" load_steps=13 format=3 uid="uid://dr4ebscsks6h1"]
 
 [ext_resource type="PackedScene" uid="uid://co8ohhjrktowf" path="res://items/projectile/projectile.tscn" id="1_ll4rv"]
+[ext_resource type="Resource" uid="uid://cgwxwx4sj52ul" path="res://resources/Weapons/HugeAsteroid.tres" id="1_ql1yq"]
 [ext_resource type="Script" path="res://items/weapons/CircularWeapon.gd" id="2_gwblj"]
+[ext_resource type="Resource" uid="uid://2q7nq6b2y1u1" path="res://resources/PassiveItem/Movement_Speed.tres" id="2_pm54f"]
 [ext_resource type="Texture2D" uid="uid://76slbxuv2jgp" path="res://assets/weapons/circular_powerSingle.png" id="3_g310m"]
 [ext_resource type="Script" path="res://Ui/Upgrade.gd" id="4_0pq3u"]
+[ext_resource type="Script" path="res://CircularUpgrade.gd" id="5_pay0j"]
+
+[sub_resource type="Resource" id="Resource_vcqxf"]
+script = ExtResource("5_pay0j")
+angular_speed = 0.0
+amount = 1
+damage = 0.0
+cooldown = 0.0
+description = "+1 Projectile"
+
+[sub_resource type="Resource" id="Resource_kvndo"]
+script = ExtResource("5_pay0j")
+angular_speed = 90.0
+amount = 0
+damage = 0.0
+cooldown = 0.0
+description = "+90 Speed"
+
+[sub_resource type="Resource" id="Resource_31xik"]
+script = ExtResource("5_pay0j")
+angular_speed = 0.0
+amount = 2
+damage = 0.0
+cooldown = 0.0
+description = "+2 Projectile"
+
+[sub_resource type="Resource" id="Resource_ted5c"]
+script = ExtResource("5_pay0j")
+angular_speed = 0.0
+amount = 0
+damage = 3.0
+cooldown = 0.0
+description = "+3 Damage"
+
+[sub_resource type="Resource" id="Resource_ddvis"]
+script = ExtResource("5_pay0j")
+angular_speed = 0.0
+amount = 0
+damage = 5.0
+cooldown = 0.0
+description = "+5 damage"
 
 [resource]
 script = ExtResource("2_gwblj")
-angular_speed = 190
-radius = 170
-amount = 5
+angular_speed = 75
+radius = 50
+amount = 1
 damage = 2.0
 cooldown = 5.0
 speed = 200.0
 projectile_node = ExtResource("1_ll4rv")
-upgrades = Array[ExtResource("4_0pq3u")]([])
+upgrades = Array[ExtResource("4_0pq3u")]([SubResource("Resource_vcqxf"), SubResource("Resource_kvndo"), SubResource("Resource_31xik"), SubResource("Resource_ted5c"), SubResource("Resource_ddvis")])
+item_needed = ExtResource("2_pm54f")
+evolution = ExtResource("1_ql1yq")
 title = "Asteroid"
+icon = ExtResource("3_g310m")
 texture = ExtResource("3_g310m")

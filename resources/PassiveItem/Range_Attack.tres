@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PassiveItem" load_steps=7 format=3 uid="uid://pqj6fq3d6j1k"]
 
 [ext_resource type="Script" path="res://resources/PassiveItem.gd" id="1_gscif"]
-[ext_resource type="Texture2D" uid="uid://cmuiq4nixlra5" path="res://assets/Book_range.png" id="2_hmj5u"]
+[ext_resource type="Texture2D" uid="uid://cmuiq4nixlra5" path="res://assets/passiveWeapons/Book_range.png" id="2_hmj5u"]
 [ext_resource type="Script" path="res://resources/stats.gd" id="3_grnpq"]
 
 [sub_resource type="Resource" id="Resource_acm0h"]
@@ -44,4 +44,5 @@ growth = 0.0
 script = ExtResource("1_gscif")
 upgrades = Array[ExtResource("3_grnpq")]([SubResource("Resource_acm0h"), SubResource("Resource_h4ty5"), SubResource("Resource_vhieb")])
 title = "Rage"
+icon = ExtResource("2_hmj5u")
 texture = ExtResource("2_hmj5u")

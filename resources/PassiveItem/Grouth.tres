@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PassiveItem" load_steps=7 format=3 uid="uid://dghjcw1bpk04l"]
 
 [ext_resource type="Script" path="res://resources/PassiveItem.gd" id="1_tvyer"]
-[ext_resource type="Texture2D" uid="uid://b1bc8jahp0xhb" path="res://assets/Star_might.png" id="2_w8hvw"]
+[ext_resource type="Texture2D" uid="uid://b1bc8jahp0xhb" path="res://assets/passiveWeapons/Star_might.png" id="2_w8hvw"]
 [ext_resource type="Script" path="res://resources/stats.gd" id="3_gk2s6"]
 
 [sub_resource type="Resource" id="Resource_l3ofo"]
@@ -44,4 +44,5 @@ growth = 0.3
 script = ExtResource("1_tvyer")
 upgrades = Array[ExtResource("3_gk2s6")]([SubResource("Resource_l3ofo"), SubResource("Resource_rsxxm"), SubResource("Resource_ebt4x")])
 title = "Grouth"
+icon = ExtResource("2_w8hvw")
 texture = ExtResource("2_w8hvw")

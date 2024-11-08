@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="Lightning" load_steps=13 format=3 uid="uid://c7tm0m6sd7bup"]
+
+[ext_resource type="Texture2D" uid="uid://d0imd8puoh68m" path="res://assets/Projectiles/tile008.png" id="1_rorjb"]
+[ext_resource type="Resource" uid="uid://c5qpy121xjlj2" path="res://resources/Weapons/LightningLoop.tres" id="1_x27gh"]
+[ext_resource type="PackedScene" uid="uid://co8ohhjrktowf" path="res://items/projectile/projectile.tscn" id="2_ajbfd"]
+[ext_resource type="Resource" uid="uid://do6kavrevydmc" path="res://resources/PassiveItem/Might.tres" id="3_flcde"]
+[ext_resource type="Script" path="res://Ligthning.gd" id="3_y74tw"]
+[ext_resource type="Texture2D" uid="uid://ds07stqqdkvaf" path="res://assets/Projectiles/008.png" id="4_dm2dv"]
+[ext_resource type="Script" path="res://Ui/Upgrade.gd" id="5_dcfik"]
+[ext_resource type="Script" path="res://LightningUpgrade.gd" id="6_3ua53"]
+
+[sub_resource type="Resource" id="Resource_qyj15"]
+script = ExtResource("6_3ua53")
+amount = 1
+damage = 0.0
+cooldown = 0.0
+description = "+1 Strike"
+
+[sub_resource type="Resource" id="Resource_mur5q"]
+script = ExtResource("6_3ua53")
+amount = 0
+damage = 0.0
+cooldown = -1.0
+description = "-1 Coldown"
+
+[sub_resource type="Resource" id="Resource_ruufg"]
+script = ExtResource("6_3ua53")
+amount = 2
+damage = 0.0
+cooldown = 0.0
+description = "+2 Strike"
+
+[sub_resource type="Resource" id="Resource_wpxj1"]
+script = ExtResource("6_3ua53")
+amount = 0
+damage = 3.0
+cooldown = 0.0
+description = "+3 Damage"
+
+[resource]
+script = ExtResource("3_y74tw")
+amount = 1
+damage = 2.0
+cooldown = 4.0
+speed = 0.0
+projectile_node = ExtResource("2_ajbfd")
+upgrades = Array[ExtResource("5_dcfik")]([SubResource("Resource_qyj15"), SubResource("Resource_mur5q"), SubResource("Resource_ruufg"), SubResource("Resource_wpxj1")])
+item_needed = ExtResource("3_flcde")
+evolution = ExtResource("1_x27gh")
+title = "Lightning"
+icon = ExtResource("1_rorjb")
+texture = ExtResource("4_dm2dv")

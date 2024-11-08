@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://byeini5meluaj"]
+[gd_scene load_steps=32 format=3 uid="uid://byeini5meluaj"]
 
 [ext_resource type="Script" path="res://players/player.gd" id="1_5louy"]
 [ext_resource type="PackedScene" uid="uid://b2r4uar4xulw2" path="res://items/weapons/slot.tscn" id="2_xibop"]
@@ -11,10 +11,12 @@
 [ext_resource type="Texture2D" uid="uid://dij82ows2wgjo" path="res://assets/progressBar/barFull.png" id="6_r60qv"]
 [ext_resource type="PackedScene" uid="uid://duiwskv1138er" path="res://sceenes/passive_slot.tscn" id="6_y4xvh"]
 [ext_resource type="Script" path="res://players/options.gd" id="7_5b1cm"]
+[ext_resource type="Resource" uid="uid://c7tm0m6sd7bup" path="res://resources/Weapons/Ligthning.tres" id="7_g0t8j"]
 [ext_resource type="Resource" uid="uid://c6pcx4alilthx" path="res://resources/Magnet.tres" id="7_ud2ma"]
+[ext_resource type="Resource" uid="uid://2q7nq6b2y1u1" path="res://resources/PassiveItem/Movement_Speed.tres" id="9_pov70"]
+[ext_resource type="Resource" uid="uid://do6kavrevydmc" path="res://resources/PassiveItem/Might.tres" id="11_qmjlb"]
 [ext_resource type="Texture2D" uid="uid://68n54hq1wm8x" path="res://assets/ui/bg.png" id="12_0aw4c"]
 [ext_resource type="Script" path="res://Ui/chest.gd" id="13_yrefl"]
-[ext_resource type="Texture2D" uid="uid://dnbs0gs6lir6u" path="res://assets/ui/chestClose.png" id="14_2y48c"]
 [ext_resource type="Texture2D" uid="uid://57v0x1chrnug" path="res://assets/ui/chestTile.png" id="15_acq8h"]
 
 [sub_resource type="Gradient" id="Gradient_nsmpd"]
@@ -36,23 +38,23 @@ scale_max = 0.5
 color = Color(0.453947, 0.732537, 0.806731, 1)
 color_ramp = SubResource("GradientTexture1D_bp8q5")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_g32br"]
-atlas = ExtResource("14_2y48c")
-region = Rect2(243, 121, 232, 232)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xa2s1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3w8kd"]
 atlas = ExtResource("15_acq8h")
-region = Rect2(248, 50, 213, 303)
+region = Rect2(235, 0, 235, 353)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vuomc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4gs4"]
 atlas = ExtResource("15_acq8h")
-region = Rect2(35, 50, 213, 303)
+region = Rect2(235, 0, 235, 353)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjnd2"]
+atlas = ExtResource("15_acq8h")
+region = Rect2(30, 0, 226, 353)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y5uuo"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_g32br")
+"texture": SubResource("AtlasTexture_3w8kd")
 }],
 "loop": true,
 "name": &"idle_boss_chest",
@@ -60,10 +62,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xa2s1")
+"texture": SubResource("AtlasTexture_i4gs4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vuomc")
+"texture": SubResource("AtlasTexture_fjnd2")
 }],
 "loop": false,
 "name": &"open_boss_chest",
@@ -157,6 +159,7 @@ item = ExtResource("6_g5vpb")
 
 [node name="Slot3" parent="UI/Weapons" instance=ExtResource("2_xibop")]
 layout_mode = 2
+item = ExtResource("7_g0t8j")
 
 [node name="PassiveItems" type="HBoxContainer" parent="UI"]
 offset_left = 63.0
@@ -170,9 +173,11 @@ item = ExtResource("7_ud2ma")
 
 [node name="PassiveSlot2" parent="UI/PassiveItems" instance=ExtResource("6_y4xvh")]
 layout_mode = 2
+item = ExtResource("9_pov70")
 
 [node name="PassiveSlot3" parent="UI/PassiveItems" instance=ExtResource("6_y4xvh")]
 layout_mode = 2
+item = ExtResource("11_qmjlb")
 
 [node name="XP" type="TextureProgressBar" parent="UI"]
 unique_name_in_owner = true
@@ -217,6 +222,7 @@ panel = NodePath("../Panel")
 
 [node name="Chest" type="NinePatchRect" parent="UI"]
 process_mode = 3
+visible = false
 custom_minimum_size = Vector2(300, 200)
 anchors_preset = 8
 anchor_left = 0.5
@@ -236,11 +242,13 @@ region_rect = Rect2(12.8358, 7.53072, 46.0978, 24.7306)
 script = ExtResource("13_yrefl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="UI/Chest"]
-position = Vector2(151, 143)
-scale = Vector2(0.5, 0.5)
+position = Vector2(146, 135)
+scale = Vector2(0.501174, 0.501174)
 sprite_frames = SubResource("SpriteFrames_y5uuo")
 animation = &"open_boss_chest"
 autoplay = "idle_boss_chest"
+frame = 1
+frame_progress = 1.0
 
 [node name="Open" type="Button" parent="UI/Chest"]
 layout_mode = 1
