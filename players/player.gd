@@ -1,24 +1,35 @@
 extends CharacterBody2D
  
 
-var health : float = 100.0 :
+var health : float = 1.0 :
 	set(value):
 		health = max(value, 0)
 		%Health.value = value
+		if health <= 0:
+			get_tree().paused = true
 		
 var max_health : float = 100.0 :
 	set(value):
 		max_health = value
 		%Health.max_value = value
 		
-var recovery : float = 0
+
 var area : float = 0
 var movement_speed : float = 150
 var nearest_enemy
 var nearest_enemy_distance : float = 150 + area
-var armor : float = 0
-var might : float = 1.5
-
+var armor : float = 0:
+	set(value):
+		armor = value
+		%Armor.text = "Armor: " + str(value)
+var might : float = 1:
+	set(value):
+			might = value
+			%Might.text = "Might: " + str(value)
+var recovery : float = 0:
+	set(value):
+			recovery = value
+			%Recovery.text = "Recovery: " + str(value)
 var gold : int = 0:
 	set(value):
 		gold = value
@@ -49,11 +60,7 @@ var level: int = 1:
 
 		
 @onready var camera = $Camera2D
-#var camera_smoothing_speed = 10.0
-#var camera_limits = Rect2(0, 0, 1024, 600)
-#var camera_pan_speed = 500.0
-#var camera_pan_acceleration = 50.0
-#var camera_pan_velocity = Vector2.ZERO
+
 
 func _physics_process(delta):
 	if is_instance_valid(nearest_enemy):
@@ -67,12 +74,9 @@ func _physics_process(delta):
 	check_XP()
 	health += recovery * delta 
 	var target_position = global_position
-	#target_position.x = clamp(target_position.x, camera_limits.position.x, camera_limits.end.x)
-	#target_position.y = clamp(target_position.y, camera_limits.position.y, camera_limits.end.y)
-	#camera.global_position = camera.global_position.lerp(target_position, delta * camera_smoothing_speed)
-	#camera.global_position += camera_pan_velocity * delta
-	#camera_pan_velocity = camera_pan_velocity.move_toward(Vector2.ZERO, camera_pan_speed * delta)
-	
+
+func _ready():
+	Persistence.gain_bonus_stats(self)
 	
 #	if velocity == Vector2.ZERO:
 #		$AnimationPlayer.play("idle")
@@ -85,8 +89,8 @@ func _physics_process(delta):
 		$Sprite2D.flip_h = false
  
 func take_damage(amount):
-	health -= max(amount - armor, 0)
-	print("damage: ", amount)
+	health -= max(amount * (amount/(amount + armor)),1)
+	
  
 func _on_self_damage_body_entered(body):
 	take_damage(body.damage)

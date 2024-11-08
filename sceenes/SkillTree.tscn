@@ -1,0 +1,328 @@
+[gd_scene load_steps=28 format=3 uid="uid://cs25raliowigf"]
+
+[ext_resource type="PackedScene" uid="uid://dry7q2v82a3so" path="res://sceenes/upgrade.tscn" id="1_7cfcd"]
+[ext_resource type="Script" path="res://Ui/skill_tree.gd" id="1_tu231"]
+[ext_resource type="Script" path="res://Ui/skill.gd" id="2_sn7nl"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="3_ahswv"]
+[ext_resource type="Texture2D" uid="uid://4w5yx0ualcfl" path="res://assets/passiveWeapons/Might_pluma.png" id="4_1pimr"]
+[ext_resource type="Script" path="res://Ui/Ui_gold.gd" id="5_ouxf2"]
+[ext_resource type="Texture2D" uid="uid://cr41ys0u1hfvv" path="res://assets/passiveWeapons/armor.png" id="6_id3ex"]
+[ext_resource type="Texture2D" uid="uid://cg515dsy6tirc" path="res://assets/passiveWeapons/hearth.png" id="6_p2nkm"]
+[ext_resource type="Script" path="res://Ui/start.gd" id="9_ryl8m"]
+
+[sub_resource type="Resource" id="Resource_r445x"]
+script = ExtResource("3_ahswv")
+description = ""
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.1
+area = 0.0
+magnet = 0.0
+growth = 0.0
+
+[sub_resource type="Resource" id="Resource_by1kp"]
+script = ExtResource("2_sn7nl")
+name = "Might I"
+texture = ExtResource("4_1pimr")
+cost = 10
+stats = SubResource("Resource_r445x")
+
+[sub_resource type="Resource" id="Resource_5thjf"]
+script = ExtResource("3_ahswv")
+description = ""
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.2
+area = 0.0
+magnet = 0.0
+growth = 0.0
+
+[sub_resource type="Resource" id="Resource_kbqcu"]
+script = ExtResource("2_sn7nl")
+name = "Might II"
+texture = ExtResource("4_1pimr")
+cost = 100
+stats = SubResource("Resource_5thjf")
+
+[sub_resource type="Resource" id="Resource_g0qnc"]
+script = ExtResource("3_ahswv")
+description = ""
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.25
+area = 0.0
+magnet = 0.0
+growth = 0.0
+
+[sub_resource type="Resource" id="Resource_vd8yi"]
+script = ExtResource("2_sn7nl")
+name = "Might III"
+texture = ExtResource("4_1pimr")
+cost = 500
+stats = SubResource("Resource_g0qnc")
+
+[sub_resource type="Resource" id="Resource_80rk1"]
+script = ExtResource("3_ahswv")
+description = ""
+max_health = 0.0
+recovery = 0.0
+armor = 1.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+
+[sub_resource type="Resource" id="Resource_2dgqv"]
+script = ExtResource("2_sn7nl")
+name = "Armor I"
+texture = ExtResource("6_id3ex")
+cost = 10
+stats = SubResource("Resource_80rk1")
+
+[sub_resource type="Resource" id="Resource_1ke2p"]
+script = ExtResource("3_ahswv")
+description = ""
+max_health = 0.0
+recovery = 0.0
+armor = 2.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+
+[sub_resource type="Resource" id="Resource_rss8w"]
+script = ExtResource("2_sn7nl")
+name = "Armor II"
+texture = ExtResource("6_id3ex")
+cost = 100
+stats = SubResource("Resource_1ke2p")
+
+[sub_resource type="Resource" id="Resource_w04nl"]
+script = ExtResource("3_ahswv")
+description = ""
+max_health = 0.0
+recovery = 0.0
+armor = 4.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+
+[sub_resource type="Resource" id="Resource_5qn70"]
+script = ExtResource("2_sn7nl")
+name = "Armor III"
+texture = ExtResource("6_id3ex")
+cost = 500
+stats = SubResource("Resource_w04nl")
+
+[sub_resource type="Resource" id="Resource_7i4wc"]
+script = ExtResource("3_ahswv")
+description = ""
+max_health = 0.0
+recovery = 0.1
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+
+[sub_resource type="Resource" id="Resource_jhmpb"]
+script = ExtResource("2_sn7nl")
+name = "Recovery I"
+texture = ExtResource("6_p2nkm")
+cost = 10
+stats = SubResource("Resource_7i4wc")
+
+[sub_resource type="Resource" id="Resource_3xmwd"]
+script = ExtResource("3_ahswv")
+description = ""
+max_health = 0.0
+recovery = 0.2
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+
+[sub_resource type="Resource" id="Resource_eqm4y"]
+script = ExtResource("2_sn7nl")
+name = "Recovery II"
+texture = ExtResource("6_p2nkm")
+cost = 100
+stats = SubResource("Resource_3xmwd")
+
+[sub_resource type="Resource" id="Resource_8p5hy"]
+script = ExtResource("3_ahswv")
+description = ""
+max_health = 0.0
+recovery = 0.4
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+
+[sub_resource type="Resource" id="Resource_2u7f0"]
+script = ExtResource("2_sn7nl")
+name = "Recovery III"
+texture = ExtResource("6_p2nkm")
+cost = 500
+stats = SubResource("Resource_8p5hy")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SkillTree" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1039.0
+offset_bottom = 1879.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tu231")
+
+[node name="Might" type="Control" parent="SkillTree"]
+layout_mode = 1
+anchor_left = 0.427
+anchor_top = 0.231
+anchor_right = 0.427
+anchor_bottom = 0.231
+offset_left = 53.267
+offset_top = -59.289
+offset_right = 93.267
+offset_bottom = -19.289
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Upgrade" parent="SkillTree/Might" instance=ExtResource("1_7cfcd")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = -216.0
+offset_top = -58.0
+offset_right = -176.0
+offset_bottom = -18.0
+skill = SubResource("Resource_by1kp")
+
+[node name="Upgrade2" parent="SkillTree/Might" instance=ExtResource("1_7cfcd")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = -40.0
+offset_top = -63.0
+offset_right = 0.0
+offset_bottom = -23.0
+skill = SubResource("Resource_kbqcu")
+
+[node name="Upgrade3" parent="SkillTree/Might" instance=ExtResource("1_7cfcd")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = 96.0
+offset_top = -61.0
+offset_right = 136.0
+offset_bottom = -21.0
+skill = SubResource("Resource_vd8yi")
+
+[node name="Armor" type="Control" parent="SkillTree"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.5
+offset_top = -669.5
+offset_right = 12.5
+offset_bottom = -629.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Upgrade" parent="SkillTree/Armor" instance=ExtResource("1_7cfcd")]
+layout_mode = 0
+offset_left = -218.0
+offset_top = -51.0
+offset_right = -178.0
+offset_bottom = -11.0
+skill = SubResource("Resource_2dgqv")
+
+[node name="Upgrade2" parent="SkillTree/Armor" instance=ExtResource("1_7cfcd")]
+layout_mode = 0
+offset_left = -38.0
+offset_top = -51.0
+offset_right = 2.0
+offset_bottom = -11.0
+skill = SubResource("Resource_rss8w")
+
+[node name="Upgrade3" parent="SkillTree/Armor" instance=ExtResource("1_7cfcd")]
+layout_mode = 0
+offset_left = 99.0
+offset_top = -46.0
+offset_right = 139.0
+offset_bottom = -6.0
+skill = SubResource("Resource_5qn70")
+
+[node name="Recovery" type="Control" parent="SkillTree"]
+anchors_preset = 0
+offset_left = 279.0
+offset_top = 158.0
+offset_right = 319.0
+offset_bottom = 198.0
+
+[node name="Upgrade" parent="SkillTree/Recovery" instance=ExtResource("1_7cfcd")]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 2.0
+offset_right = 57.0
+offset_bottom = 42.0
+skill = SubResource("Resource_jhmpb")
+
+[node name="Upgrade2" parent="SkillTree/Recovery" instance=ExtResource("1_7cfcd")]
+layout_mode = 0
+offset_left = 197.0
+offset_top = -1.0
+offset_right = 237.0
+offset_bottom = 39.0
+skill = SubResource("Resource_eqm4y")
+
+[node name="Upgrade3" parent="SkillTree/Recovery" instance=ExtResource("1_7cfcd")]
+layout_mode = 0
+offset_left = 333.0
+offset_top = -1.0
+offset_right = 373.0
+offset_bottom = 39.0
+skill = SubResource("Resource_2u7f0")
+
+[node name="Gold" type="Label" parent="."]
+layout_mode = 0
+offset_left = 895.0
+offset_top = 44.0
+offset_right = 1031.0
+offset_bottom = 81.0
+horizontal_alignment = 2
+script = ExtResource("5_ouxf2")
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 0
+offset_left = 471.0
+offset_top = 432.0
+offset_right = 517.0
+offset_bottom = 463.0
+text = "Start"
+script = ExtResource("9_ryl8m")
+
+[connection signal="pressed" from="Start" to="Start" method="_on_pressed"]

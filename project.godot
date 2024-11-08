@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 SoundManager="*res://sound_manager.gd"
+SavedData="*res://sceenes/saved_data.tscn"
+Persistence="*res://sceenes/persistence.tscn"
 
 [display]
 
@@ -27,10 +29,6 @@ window/size/viewport_height=1920
 [dotnet]
 
 project/assembly_name="finalSurvivor"
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/gdscript_formatter/plugin.cfg")
 
 [file_customization]
 
