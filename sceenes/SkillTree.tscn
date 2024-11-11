@@ -1,6 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://cs25raliowigf"]
+[gd_scene load_steps=38 format=3 uid="uid://cs25raliowigf"]
 
 [ext_resource type="PackedScene" uid="uid://dry7q2v82a3so" path="res://sceenes/upgrade.tscn" id="1_7cfcd"]
+[ext_resource type="Script" path="res://Ui/mainMenu.gd" id="1_tsyqn"]
 [ext_resource type="Script" path="res://Ui/skill_tree.gd" id="1_tu231"]
 [ext_resource type="Script" path="res://Ui/skill.gd" id="2_sn7nl"]
 [ext_resource type="Script" path="res://resources/stats.gd" id="3_ahswv"]
@@ -8,7 +9,15 @@
 [ext_resource type="Script" path="res://Ui/Ui_gold.gd" id="5_ouxf2"]
 [ext_resource type="Texture2D" uid="uid://cr41ys0u1hfvv" path="res://assets/passiveWeapons/armor.png" id="6_id3ex"]
 [ext_resource type="Texture2D" uid="uid://cg515dsy6tirc" path="res://assets/passiveWeapons/hearth.png" id="6_p2nkm"]
+[ext_resource type="Texture2D" uid="uid://yxnd08cmjey2" path="res://assets/ui/GUI.png" id="8_uj8yp"]
 [ext_resource type="Script" path="res://Ui/start.gd" id="9_ryl8m"]
+
+[sub_resource type="Theme" id="Theme_t4ady"]
+Button/colors/font_color = Color(0.87451, 0.964706, 0.87451, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w6p16"]
+texture = ExtResource("8_uj8yp")
+region_rect = Rect2(5.19473, 101.525, 37.4106, 21.9428)
 
 [sub_resource type="Resource" id="Resource_r445x"]
 script = ExtResource("3_ahswv")
@@ -181,133 +190,286 @@ texture = ExtResource("6_p2nkm")
 cost = 500
 stats = SubResource("Resource_8p5hy")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qxq8s"]
+texture = ExtResource("8_uj8yp")
+texture_margin_top = 0.179859
+region_rect = Rect2(7.77291, 40.2664, 31.0409, 31.463)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0b4md"]
+texture = ExtResource("8_uj8yp")
+region_rect = Rect2(6.18855, 101.864, 36.0799, 21.6209)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_712ku"]
+texture = ExtResource("8_uj8yp")
+region_rect = Rect2(50.8675, 98.9806, 26.7684, 26.3331)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ycje"]
+texture = ExtResource("8_uj8yp")
+region_rect = Rect2(51.8462, 100.483, 24.1992, 23.7087)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rnyt4"]
+texture = ExtResource("8_uj8yp")
+region_rect = Rect2(6.54979, 102.182, 35.6867, 20.711)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mt0th"]
+bg_color = Color(0.283965, 0.184872, 0.723278, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 719.0
+offset_bottom = 1075.0
+theme = SubResource("Theme_t4ady")
+script = ExtResource("1_tsyqn")
 
 [node name="SkillTree" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1039.0
-offset_bottom = 1879.0
+offset_left = 6.0
+offset_top = -3.0
+offset_right = -6.0
+offset_bottom = 9.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(320, 180)
+theme_override_styles/panel = SubResource("StyleBoxTexture_w6p16")
 script = ExtResource("1_tu231")
 
 [node name="Might" type="Control" parent="SkillTree"]
 layout_mode = 1
-anchor_left = 0.427
-anchor_top = 0.231
-anchor_right = 0.427
-anchor_bottom = 0.231
-offset_left = 53.267
-offset_top = -59.289
-offset_right = 93.267
-offset_bottom = -19.289
+anchors_preset = 0
+offset_left = 83.0
+offset_top = 290.0
+offset_right = 123.0
+offset_bottom = 330.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Upgrade" parent="SkillTree/Might" instance=ExtResource("1_7cfcd")]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 0
-offset_left = -216.0
-offset_top = -58.0
-offset_right = -176.0
-offset_bottom = -18.0
+offset_left = 4.0
+offset_top = 22.0
+offset_right = 44.0
+offset_bottom = 62.0
 skill = SubResource("Resource_by1kp")
 
 [node name="Upgrade2" parent="SkillTree/Might" instance=ExtResource("1_7cfcd")]
 custom_minimum_size = Vector2(40, 40)
-layout_mode = 0
-offset_left = -40.0
-offset_top = -63.0
-offset_right = 0.0
-offset_bottom = -23.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.192
+anchor_top = -7.142
+anchor_right = -2.192
+anchor_bottom = -7.142
+offset_left = 217.68
+offset_top = 301.68
+offset_right = 257.68
+offset_bottom = 341.68
 skill = SubResource("Resource_kbqcu")
 
 [node name="Upgrade3" parent="SkillTree/Might" instance=ExtResource("1_7cfcd")]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 0
-offset_left = 96.0
-offset_top = -61.0
-offset_right = 136.0
-offset_bottom = -21.0
+offset_left = 245.0
+offset_top = 14.0
+offset_right = 285.0
+offset_bottom = 54.0
 skill = SubResource("Resource_vd8yi")
 
 [node name="Armor" type="Control" parent="SkillTree"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -27.5
-offset_top = -669.5
-offset_right = 12.5
-offset_bottom = -629.5
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_left = 120.0
+offset_top = 126.0
+offset_right = 160.0
+offset_bottom = 166.0
 
 [node name="Upgrade" parent="SkillTree/Armor" instance=ExtResource("1_7cfcd")]
 layout_mode = 0
-offset_left = -218.0
-offset_top = -51.0
-offset_right = -178.0
-offset_bottom = -11.0
+offset_left = -27.0
+offset_top = -38.0
+offset_right = 13.0
+offset_bottom = 2.0
 skill = SubResource("Resource_2dgqv")
 
 [node name="Upgrade2" parent="SkillTree/Armor" instance=ExtResource("1_7cfcd")]
 layout_mode = 0
-offset_left = -38.0
-offset_top = -51.0
-offset_right = 2.0
-offset_bottom = -11.0
+offset_left = 90.0
+offset_top = -36.0
+offset_right = 130.0
+offset_bottom = 4.0
 skill = SubResource("Resource_rss8w")
 
 [node name="Upgrade3" parent="SkillTree/Armor" instance=ExtResource("1_7cfcd")]
 layout_mode = 0
-offset_left = 99.0
-offset_top = -46.0
-offset_right = 139.0
-offset_bottom = -6.0
+offset_left = 205.0
+offset_top = -37.0
+offset_right = 245.0
+offset_bottom = 3.0
 skill = SubResource("Resource_5qn70")
 
 [node name="Recovery" type="Control" parent="SkillTree"]
 anchors_preset = 0
-offset_left = 279.0
-offset_top = 158.0
-offset_right = 319.0
-offset_bottom = 198.0
+offset_left = 262.0
+offset_top = 341.5
+offset_right = 302.0
+offset_bottom = 381.5
 
 [node name="Upgrade" parent="SkillTree/Recovery" instance=ExtResource("1_7cfcd")]
 layout_mode = 0
-offset_left = 17.0
-offset_top = 2.0
-offset_right = 57.0
-offset_bottom = 42.0
+offset_left = -175.0
+offset_top = -140.5
+offset_right = -135.0
+offset_bottom = -100.5
 skill = SubResource("Resource_jhmpb")
 
 [node name="Upgrade2" parent="SkillTree/Recovery" instance=ExtResource("1_7cfcd")]
 layout_mode = 0
-offset_left = 197.0
-offset_top = -1.0
-offset_right = 237.0
-offset_bottom = 39.0
+offset_left = -52.0
+offset_top = -140.5
+offset_right = -12.0
+offset_bottom = -100.5
 skill = SubResource("Resource_eqm4y")
 
 [node name="Upgrade3" parent="SkillTree/Recovery" instance=ExtResource("1_7cfcd")]
-layout_mode = 0
-offset_left = 333.0
-offset_top = -1.0
-offset_right = 373.0
-offset_bottom = 39.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -6.726
+anchor_top = -8.419
+anchor_right = -6.726
+anchor_bottom = -8.419
+offset_left = 334.04
+offset_top = 194.26
+offset_right = 374.04
+offset_bottom = 234.26
 skill = SubResource("Resource_2u7f0")
 
+[node name="Menu" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(320, 180)
+theme_override_styles/panel = SubResource("StyleBoxTexture_qxq8s")
+
+[node name="Start" type="Button" parent="Menu"]
+layout_mode = 0
+offset_left = 312.0
+offset_top = 507.0
+offset_right = 395.0
+offset_bottom = 560.0
+theme_override_font_sizes/font_size = 32
+text = "Start"
+script = ExtResource("9_ryl8m")
+
+[node name="Upgrades" type="Button" parent="Menu"]
+layout_mode = 0
+offset_left = 484.0
+offset_top = 382.0
+offset_right = 566.0
+offset_bottom = 413.0
+text = "Upgrades"
+
+[node name="Beastiary" type="Button" parent="Menu"]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 381.0
+offset_right = 198.0
+offset_bottom = 412.0
+text = "Beastiary"
+
+[node name="Beastiary" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(320, 180)
+theme_override_styles/panel = SubResource("StyleBoxTexture_0b4md")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Beastiary"]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 0
+offset_left = 60.0
+offset_top = 50.0
+offset_right = 310.0
+offset_bottom = 300.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_712ku")
+
+[node name="EnemyList" type="VBoxContainer" parent="Beastiary/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Information" type="Panel" parent="Beastiary"]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 0
+offset_left = 433.0
+offset_top = 46.0
+offset_right = 683.0
+offset_bottom = 296.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_8ycje")
+
+[node name="TextureRect" type="TextureRect" parent="Beastiary/Information"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -42.0
+offset_top = 29.0
+offset_right = 38.0
+offset_bottom = 109.0
+grow_horizontal = 2
+expand_mode = 1
+
+[node name="Panel" type="Panel" parent="Beastiary/Information/TextureRect"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -25.0
+offset_top = -8.0
+offset_right = 104.0
+offset_bottom = 94.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_rnyt4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Beastiary/Information"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -63.0
+offset_right = 56.0
+offset_bottom = -23.0
+grow_vertical = 0
+
+[node name="Name" type="Label" parent="Beastiary/Information/VBoxContainer"]
+layout_mode = 2
+text = "Name:"
+
+[node name="Damage" type="Label" parent="Beastiary/Information/VBoxContainer"]
+layout_mode = 2
+text = "Damage:"
+
+[node name="Health" type="Label" parent="Beastiary/Information/VBoxContainer"]
+layout_mode = 2
+text = "Health:"
+
 [node name="Gold" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 895.0
 offset_top = 44.0
@@ -316,13 +478,23 @@ offset_bottom = 81.0
 horizontal_alignment = 2
 script = ExtResource("5_ouxf2")
 
-[node name="Start" type="Button" parent="."]
-layout_mode = 0
-offset_left = 471.0
-offset_top = 432.0
-offset_right = 517.0
-offset_bottom = 463.0
-text = "Start"
-script = ExtResource("9_ryl8m")
+[node name="Back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 244.5
+offset_top = -120.5
+offset_right = 289.5
+offset_bottom = -89.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_mt0th")
+text = "Back"
 
-[connection signal="pressed" from="Start" to="Start" method="_on_pressed"]
+[connection signal="pressed" from="Menu/Start" to="Menu/Start" method="_on_pressed"]
+[connection signal="pressed" from="Menu/Upgrades" to="." method="_on_upgrades_pressed"]
+[connection signal="pressed" from="Menu/Beastiary" to="." method="_on_beastiary_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

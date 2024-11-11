@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cygcywxcrxj5d"]
+
+[ext_resource type="Shader" path="res://Ui/line_2d.gdshader" id="1_s0xke"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nacbn"]
+shader = ExtResource("1_s0xke")
+shader_parameter/line_thickness = 1.0
+shader_parameter/sin_frequency = 0.5
+shader_parameter/sin_offset = 0.0
+shader_parameter/light_offset = 0.5
+
+[node name="Line2D" type="Line2D"]
+material = SubResource("ShaderMaterial_nacbn")
+closed = true
+width = 2.0
+default_color = Color(0.125878, 0.340329, 0.536658, 1)
