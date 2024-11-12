@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://cs25raliowigf"]
+[gd_scene load_steps=36 format=3 uid="uid://cs25raliowigf"]
 
 [ext_resource type="PackedScene" uid="uid://dry7q2v82a3so" path="res://sceenes/upgrade.tscn" id="1_7cfcd"]
 [ext_resource type="Script" path="res://Ui/mainMenu.gd" id="1_tsyqn"]
@@ -19,45 +19,7 @@ Button/colors/font_color = Color(0.87451, 0.964706, 0.87451, 1)
 texture = ExtResource("8_uj8yp")
 region_rect = Rect2(5.19473, 101.525, 37.4106, 21.9428)
 
-[sub_resource type="Resource" id="Resource_r445x"]
-script = ExtResource("3_ahswv")
-description = ""
-max_health = 0.0
-recovery = 0.0
-armor = 0.0
-movement_speed = 0.0
-might = 0.1
-area = 0.0
-magnet = 0.0
-growth = 0.0
-
-[sub_resource type="Resource" id="Resource_by1kp"]
-script = ExtResource("2_sn7nl")
-name = "Might I"
-texture = ExtResource("4_1pimr")
-cost = 10
-stats = SubResource("Resource_r445x")
-
-[sub_resource type="Resource" id="Resource_5thjf"]
-script = ExtResource("3_ahswv")
-description = ""
-max_health = 0.0
-recovery = 0.0
-armor = 0.0
-movement_speed = 0.0
-might = 0.2
-area = 0.0
-magnet = 0.0
-growth = 0.0
-
-[sub_resource type="Resource" id="Resource_kbqcu"]
-script = ExtResource("2_sn7nl")
-name = "Might II"
-texture = ExtResource("4_1pimr")
-cost = 100
-stats = SubResource("Resource_5thjf")
-
-[sub_resource type="Resource" id="Resource_g0qnc"]
+[sub_resource type="Resource" id="Resource_25u1h"]
 script = ExtResource("3_ahswv")
 description = ""
 max_health = 0.0
@@ -69,12 +31,50 @@ area = 0.0
 magnet = 0.0
 growth = 0.0
 
-[sub_resource type="Resource" id="Resource_vd8yi"]
+[sub_resource type="Resource" id="Resource_2i3rk"]
+script = ExtResource("2_sn7nl")
+name = "Might I"
+texture = ExtResource("4_1pimr")
+cost = 10
+stats = SubResource("Resource_25u1h")
+
+[sub_resource type="Resource" id="Resource_gkful"]
+script = ExtResource("3_ahswv")
+description = ""
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.5
+area = 0.0
+magnet = 0.0
+growth = 0.0
+
+[sub_resource type="Resource" id="Resource_f73qv"]
+script = ExtResource("2_sn7nl")
+name = "Might II"
+texture = ExtResource("4_1pimr")
+cost = 100
+stats = SubResource("Resource_gkful")
+
+[sub_resource type="Resource" id="Resource_lawk7"]
+script = ExtResource("3_ahswv")
+description = ""
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.75
+area = 0.0
+magnet = 0.0
+growth = 0.0
+
+[sub_resource type="Resource" id="Resource_vlx4d"]
 script = ExtResource("2_sn7nl")
 name = "Might III"
 texture = ExtResource("4_1pimr")
-cost = 500
-stats = SubResource("Resource_g0qnc")
+cost = 1000
+stats = SubResource("Resource_lawk7")
 
 [sub_resource type="Resource" id="Resource_80rk1"]
 script = ExtResource("3_ahswv")
@@ -113,25 +113,6 @@ name = "Armor II"
 texture = ExtResource("6_id3ex")
 cost = 100
 stats = SubResource("Resource_1ke2p")
-
-[sub_resource type="Resource" id="Resource_w04nl"]
-script = ExtResource("3_ahswv")
-description = ""
-max_health = 0.0
-recovery = 0.0
-armor = 4.0
-movement_speed = 0.0
-might = 0.0
-area = 0.0
-magnet = 0.0
-growth = 0.0
-
-[sub_resource type="Resource" id="Resource_5qn70"]
-script = ExtResource("2_sn7nl")
-name = "Armor III"
-texture = ExtResource("6_id3ex")
-cost = 500
-stats = SubResource("Resource_w04nl")
 
 [sub_resource type="Resource" id="Resource_7i4wc"]
 script = ExtResource("3_ahswv")
@@ -227,7 +208,6 @@ theme = SubResource("Theme_t4ady")
 script = ExtResource("1_tsyqn")
 
 [node name="SkillTree" type="Panel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -244,112 +224,113 @@ script = ExtResource("1_tu231")
 
 [node name="Might" type="Control" parent="SkillTree"]
 layout_mode = 1
-anchors_preset = 0
-offset_left = 83.0
-offset_top = 290.0
-offset_right = 123.0
-offset_bottom = 330.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Upgrade" parent="SkillTree/Might" instance=ExtResource("1_7cfcd")]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 0
-offset_left = 4.0
-offset_top = 22.0
-offset_right = 44.0
-offset_bottom = 62.0
-skill = SubResource("Resource_by1kp")
+offset_left = 50.5
+offset_top = -166.5
+offset_right = 90.5
+offset_bottom = -126.5
+skill = SubResource("Resource_2i3rk")
 
 [node name="Upgrade2" parent="SkillTree/Might" instance=ExtResource("1_7cfcd")]
 custom_minimum_size = Vector2(40, 40)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -2.192
-anchor_top = -7.142
-anchor_right = -2.192
-anchor_bottom = -7.142
-offset_left = 217.68
-offset_top = 301.68
-offset_right = 257.68
-offset_bottom = 341.68
-skill = SubResource("Resource_kbqcu")
+layout_mode = 0
+offset_left = 151.5
+offset_top = -166.5
+offset_right = 191.5
+offset_bottom = -126.5
+skill = SubResource("Resource_f73qv")
 
 [node name="Upgrade3" parent="SkillTree/Might" instance=ExtResource("1_7cfcd")]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 0
-offset_left = 245.0
-offset_top = 14.0
-offset_right = 285.0
-offset_bottom = 54.0
-skill = SubResource("Resource_vd8yi")
+offset_left = 256.5
+offset_top = -166.5
+offset_right = 296.5
+offset_bottom = -126.5
+skill = SubResource("Resource_vlx4d")
 
 [node name="Armor" type="Control" parent="SkillTree"]
 layout_mode = 1
 anchors_preset = 0
-offset_left = 120.0
-offset_top = 126.0
-offset_right = 160.0
-offset_bottom = 166.0
+offset_left = 323.0
+offset_top = 290.0
+offset_right = 363.0
+offset_bottom = 330.0
 
 [node name="Upgrade" parent="SkillTree/Armor" instance=ExtResource("1_7cfcd")]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 0
-offset_left = -27.0
-offset_top = -38.0
-offset_right = 13.0
-offset_bottom = 2.0
+offset_left = -22.0
+offset_top = 6.0
+offset_right = 18.0
+offset_bottom = 46.0
 skill = SubResource("Resource_2dgqv")
 
 [node name="Upgrade2" parent="SkillTree/Armor" instance=ExtResource("1_7cfcd")]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 0
-offset_left = 90.0
-offset_top = -36.0
-offset_right = 130.0
-offset_bottom = 4.0
+offset_left = -22.0
+offset_top = -68.0
+offset_right = 18.0
+offset_bottom = -28.0
 skill = SubResource("Resource_rss8w")
 
 [node name="Upgrade3" parent="SkillTree/Armor" instance=ExtResource("1_7cfcd")]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 0
-offset_left = 205.0
-offset_top = -37.0
-offset_right = 245.0
-offset_bottom = 3.0
-skill = SubResource("Resource_5qn70")
+offset_left = -23.0
+offset_top = -146.0
+offset_right = 17.0
+offset_bottom = -106.0
+skill = SubResource("Resource_rss8w")
 
 [node name="Recovery" type="Control" parent="SkillTree"]
 anchors_preset = 0
-offset_left = 262.0
-offset_top = 341.5
-offset_right = 302.0
-offset_bottom = 381.5
+offset_left = 235.0
+offset_top = 351.0
+offset_right = 275.0
+offset_bottom = 391.0
 
 [node name="Upgrade" parent="SkillTree/Recovery" instance=ExtResource("1_7cfcd")]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 0
-offset_left = -175.0
-offset_top = -140.5
-offset_right = -135.0
-offset_bottom = -100.5
 skill = SubResource("Resource_jhmpb")
 
 [node name="Upgrade2" parent="SkillTree/Recovery" instance=ExtResource("1_7cfcd")]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 0
-offset_left = -52.0
-offset_top = -140.5
-offset_right = -12.0
-offset_bottom = -100.5
+offset_left = -67.0
+offset_top = 2.0
+offset_right = -27.0
+offset_bottom = 42.0
 skill = SubResource("Resource_eqm4y")
 
 [node name="Upgrade3" parent="SkillTree/Recovery" instance=ExtResource("1_7cfcd")]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -6.726
 anchor_top = -8.419
 anchor_right = -6.726
 anchor_bottom = -8.419
-offset_left = 334.04
-offset_top = 194.26
-offset_right = 374.04
-offset_bottom = 234.26
+offset_left = 136.04
+offset_top = 336.76
+offset_right = 176.04
+offset_bottom = 376.76
 skill = SubResource("Resource_2u7f0")
 
 [node name="Menu" type="Panel" parent="."]
@@ -392,6 +373,7 @@ offset_bottom = 412.0
 text = "Beastiary"
 
 [node name="Beastiary" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -469,12 +451,11 @@ layout_mode = 2
 text = "Health:"
 
 [node name="Gold" type="Label" parent="."]
-visible = false
 layout_mode = 0
-offset_left = 895.0
-offset_top = 44.0
-offset_right = 1031.0
-offset_bottom = 81.0
+offset_left = 536.0
+offset_top = 59.0
+offset_right = 672.0
+offset_bottom = 96.0
 horizontal_alignment = 2
 script = ExtResource("5_ouxf2")
 
@@ -485,10 +466,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 244.5
-offset_top = -120.5
-offset_right = 289.5
-offset_bottom = -89.5
+offset_left = -53.5
+offset_top = -114.5
+offset_right = -8.5
+offset_bottom = -83.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_mt0th")
