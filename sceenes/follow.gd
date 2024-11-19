@@ -18,6 +18,6 @@ func transition():
 		var chance = randi() % 2
 		match chance:
 			0:
-				get_parent().change_state("HomingMissile")
+				get_parent().change_state("HarmingMissile")
 			1:
 				get_parent().change_state("LaserBeam")

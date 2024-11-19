@@ -21,6 +21,11 @@ SoundManager="*res://sound_manager.gd"
 SavedData="*res://sceenes/saved_data.tscn"
 Persistence="*res://sceenes/persistence.tscn"
 
+[debug]
+
+shapes/avoidance/enable_obstacles_radius=false
+shapes/avoidance/enable_obstacles_static=false
+
 [display]
 
 window/size/viewport_width=720

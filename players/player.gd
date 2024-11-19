@@ -75,6 +75,8 @@ func _physics_process(delta):
 	health += recovery * delta 
 	var target_position = global_position
 
+
+
 func _ready():
 	Persistence.gain_bonus_stats(self)
 	

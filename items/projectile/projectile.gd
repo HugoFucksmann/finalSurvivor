@@ -15,7 +15,8 @@ func _on_body_entered(body):
 			body.take_damage(damage * source.might)
 		else:
 			body.take_damage(damage)
-		body.knockback = direction * 75
+			if body.has_property("knockback"):
+				body.knockback = direction * 75
  
  
 func _on_screen_exited():

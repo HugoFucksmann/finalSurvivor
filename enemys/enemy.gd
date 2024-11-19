@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-#@export var enemy_pool: EnemyPool
-
 var player_reference : CharacterBody2D
 var damage_popup_node = preload("res://items/weapons/damage.tscn")
 var direction : Vector2
@@ -44,8 +42,6 @@ func check_separation(_delta):
 		player_reference.nearest_enemy = self
  
 	if separation >= 500 and not elite:
-		#if enemy_pool:
-		#	enemy_pool.return_enemy(self)
 		if separation < player_reference.nearest_enemy_distance:
 			player_reference.nearest_enemy = self
 
