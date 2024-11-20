@@ -41,6 +41,7 @@ var magnet : float = 0:
 		%Magnet.shape.radius = 50 + value
 
 var growth : float = 1
+var luck: float = 2.0
 
 var XP : int = 0:
 	set(value):

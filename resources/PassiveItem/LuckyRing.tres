@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="PassiveItem" load_steps=7 format=3 uid="uid://ddt4v2rhgh3ae"]
+
+[ext_resource type="Texture2D" uid="uid://b5e52i4q8eggl" path="res://assets/passiveWeapons/luckyRing.png" id="1_fvjm4"]
+[ext_resource type="Script" path="res://resources/PassiveItem.gd" id="2_4blju"]
+[ext_resource type="Script" path="res://resources/stats.gd" id="3_rp6q2"]
+
+[sub_resource type="Resource" id="Resource_y0x75"]
+script = ExtResource("3_rp6q2")
+description = "+0.1 luck"
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+luck = 0.1
+
+[sub_resource type="Resource" id="Resource_io3vm"]
+script = ExtResource("3_rp6q2")
+description = "+0.2 luck"
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+luck = 0.2
+
+[sub_resource type="Resource" id="Resource_p6gij"]
+script = ExtResource("3_rp6q2")
+description = "+0.25  luck"
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+luck = 0.25
+
+[resource]
+script = ExtResource("2_4blju")
+upgrades = Array[ExtResource("3_rp6q2")]([SubResource("Resource_y0x75"), SubResource("Resource_io3vm"), SubResource("Resource_p6gij")])
+title = "Lucky Ring"
+icon = ExtResource("1_fvjm4")
+texture = ExtResource("1_fvjm4")

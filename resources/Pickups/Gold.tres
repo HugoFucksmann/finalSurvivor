@@ -11,3 +11,4 @@ title = "Gold"
 icon = ExtResource("1_1vpga")
 description = "+5 Gold"
 sound = ExtResource("3_dt6ve")
+weight = 10.0

@@ -36,14 +36,16 @@ func _on_close_pressed():
 func set_reward():
 	clear_reward()
 	var chance = randf()
-	if chance < 0.5:
-		upgrade_item(0,3)  # Muestra 3 items
+	var weight = [5.0,2.0,1.0]
+	print(chance)
+	if chance < get_weighted_chance(weight, 0):
+		upgrade_item(2,3)
 		print("rare")
-	elif chance < 0.75:
-		upgrade_item(0,4)  # Muestra 4 items
+	elif chance < get_weighted_chance(weight, 1):
+		upgrade_item(1,4)
 		print("epic")
 	else:
-		upgrade_item(0,5)  # Muestra 5 items
+		upgrade_item(0,5)
 		print("legendary")
  
 func upgrade_item(start, end):
@@ -71,3 +73,20 @@ func add_gold(index):
 	gold.player_reference = owner
 	rewards.get_child(index).texture = gold.icon
 	gold.activate()
+
+func get_weighted_chance(weight, index):
+	var modified_weight = []
+	var sum = 0
+	for i in range(weight.size()):
+		if i == 0:
+			modified_weight.append(weight[i])
+			sum += weight[i]
+		else:
+			modified_weight.append(weight[i] * owner.luck)
+			sum += weight[i] * owner.luck
+ 
+	var cumulative = 0
+	for i in range(index + 1):
+		cumulative += modified_weight[i]
+ 
+	return float(cumulative)/sum

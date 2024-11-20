@@ -15,6 +15,7 @@ might = 0.0
 area = 0.0
 magnet = 0.0
 growth = 0.0
+luck = 0.0
 
 [sub_resource type="Resource" id="Resource_r3ned"]
 script = ExtResource("3_uiyrn")
@@ -27,6 +28,7 @@ might = 0.0
 area = 0.0
 magnet = 0.0
 growth = 0.0
+luck = 0.0
 
 [sub_resource type="Resource" id="Resource_up60h"]
 script = ExtResource("3_uiyrn")
@@ -39,6 +41,7 @@ might = 0.0
 area = 0.0
 magnet = 0.0
 growth = 0.0
+luck = 0.0
 
 [resource]
 script = ExtResource("1_d73pp")

@@ -11,3 +11,4 @@ title = "Sandwitch"
 icon = ExtResource("1_fdca6")
 description = "+20 Health"
 sound = ExtResource("3_6gdl2")
+weight = 5.0

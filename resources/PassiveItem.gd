@@ -5,15 +5,16 @@ class_name PassiveItem
 var player_reference
 
 func is_upgradable() -> bool:
-	if level <= upgrades.size():
-		return true
-	else:
-		return false
+	print("Checking is_upgradable, level: ", level, ", upgrades.size(): ", upgrades.size())
+	return level <= upgrades.size()	
 		
 func upgrade_item():
+	print("Upgrading item, current level: ", level)
 	if not is_upgradable():
+		print("Not upgradable")
 		return 
 	if player_reference == null:
+		print("player_reference is null")
 		return
 		
 	var upgrade = upgrades[level - 1]
@@ -26,5 +27,7 @@ func upgrade_item():
 	player_reference.area += upgrade.area
 	player_reference.magnet += upgrade.magnet
 	player_reference.growth += upgrade.growth
-
+	player_reference.growth += upgrade.growth
+	print("Upgrading item, new level: ", level + 1)
+	
 	level += 1

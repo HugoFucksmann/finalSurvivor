@@ -33,8 +33,20 @@ func take_damage(amount = 1):
  
  
 func drop_item():
-	var item = drops.pick_random()
+	var item
+	var weights = []
+	for pickup in drops:
+		if pickup is Gold:
+			weights.append(pickup.weight)
+		else:
+			weights.append(pickup.weight * player_reference.luck)	
  
+	var chance = randf()
+	for i in range(drops.size()):
+		if chance < get_weighted_chance(weights, i):
+			item = drops[i]
+			break
+			
 	var item_to_drop = drop_node.instantiate()
  
 	item_to_drop.type = item
@@ -43,3 +55,14 @@ func drop_item():
  
 	get_tree().current_scene.call_deferred("add_child", item_to_drop)
 	queue_free()
+
+func get_weighted_chance(weight, index):
+	var sum = 0
+	for i in range(weight.size()):
+		sum += weight[i]
+ 
+	var cumulative = 0
+	for i in range(index + 1):
+		cumulative += weight[i]
+ 
+	return float(cumulative)/sum

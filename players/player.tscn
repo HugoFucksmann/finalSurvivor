@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://byeini5meluaj"]
+[gd_scene load_steps=28 format=3 uid="uid://byeini5meluaj"]
 
 [ext_resource type="Script" path="res://players/player.gd" id="1_5louy"]
 [ext_resource type="PackedScene" uid="uid://b2r4uar4xulw2" path="res://items/weapons/slot.tscn" id="2_xibop"]
@@ -7,14 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://d1fmcm4svmb1h" path="res://assets/ui/panel.jpg" id="3_6316y"]
 [ext_resource type="Texture2D" uid="uid://qcebra1auw21" path="res://assets/progressBar/barEmpty.png" id="4_jruri"]
 [ext_resource type="Texture2D" uid="uid://d3jjr1ydrhe13" path="res://assets/progressBar/bartres.png" id="5_w22ha"]
-[ext_resource type="Resource" uid="uid://dr4ebscsks6h1" path="res://resources/Weapons/Asteroid.tres" id="6_g5vpb"]
 [ext_resource type="Texture2D" uid="uid://dij82ows2wgjo" path="res://assets/progressBar/barFull.png" id="6_r60qv"]
 [ext_resource type="PackedScene" uid="uid://duiwskv1138er" path="res://sceenes/passive_slot.tscn" id="6_y4xvh"]
 [ext_resource type="Script" path="res://players/options.gd" id="7_5b1cm"]
-[ext_resource type="Resource" uid="uid://c7tm0m6sd7bup" path="res://resources/Weapons/Ligthning.tres" id="7_g0t8j"]
-[ext_resource type="Resource" uid="uid://c6pcx4alilthx" path="res://resources/Magnet.tres" id="7_ud2ma"]
-[ext_resource type="Resource" uid="uid://2q7nq6b2y1u1" path="res://resources/PassiveItem/Movement_Speed.tres" id="9_pov70"]
-[ext_resource type="Resource" uid="uid://do6kavrevydmc" path="res://resources/PassiveItem/Might.tres" id="11_qmjlb"]
 [ext_resource type="Texture2D" uid="uid://68n54hq1wm8x" path="res://assets/ui/bg.png" id="12_0aw4c"]
 [ext_resource type="Script" path="res://Ui/chest.gd" id="13_yrefl"]
 [ext_resource type="Texture2D" uid="uid://57v0x1chrnug" path="res://assets/ui/chestTile.png" id="15_acq8h"]
@@ -177,11 +172,9 @@ item = ExtResource("3_2o3ic")
 
 [node name="Slot2" parent="UI/Weapons" instance=ExtResource("2_xibop")]
 layout_mode = 2
-item = ExtResource("6_g5vpb")
 
 [node name="Slot3" parent="UI/Weapons" instance=ExtResource("2_xibop")]
 layout_mode = 2
-item = ExtResource("7_g0t8j")
 
 [node name="PassiveItems" type="HBoxContainer" parent="UI"]
 offset_left = 63.0
@@ -191,15 +184,12 @@ offset_bottom = 161.0
 
 [node name="PassiveSlot" parent="UI/PassiveItems" instance=ExtResource("6_y4xvh")]
 layout_mode = 2
-item = ExtResource("7_ud2ma")
 
 [node name="PassiveSlot2" parent="UI/PassiveItems" instance=ExtResource("6_y4xvh")]
 layout_mode = 2
-item = ExtResource("9_pov70")
 
 [node name="PassiveSlot3" parent="UI/PassiveItems" instance=ExtResource("6_y4xvh")]
 layout_mode = 2
-item = ExtResource("11_qmjlb")
 
 [node name="XP" type="TextureProgressBar" parent="UI"]
 unique_name_in_owner = true

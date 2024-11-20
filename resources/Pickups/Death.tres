@@ -10,3 +10,4 @@ title = "Death"
 icon = ExtResource("1_oxs3c")
 description = "Destroy every enemy"
 sound = ExtResource("3_ufr1g")
+weight = 1.0

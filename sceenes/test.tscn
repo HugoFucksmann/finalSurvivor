@@ -572,6 +572,6 @@ script = ExtResource("5_v5710")
 enemy_scene = ExtResource("6_vlux6")
 
 [node name="Destructible" parent="." instance=ExtResource("8_40b5u")]
-position = Vector2(441, 811)
+position = Vector2(532, 724)
 scale = Vector2(0.234, 0.252)
 drops = Array[ExtResource("9_ytpjp")]([ExtResource("10_dfhni"), ExtResource("10_q8a06"), ExtResource("11_ihuxa"), ExtResource("12_1ogjw")])
