@@ -75,26 +75,26 @@ func _physics_process(delta):
 	check_XP()
 	health += recovery * delta 
 	var target_position = global_position
-
-
-
-func _ready():
-	Persistence.gain_bonus_stats(self)
 	
-#	if velocity == Vector2.ZERO:
-#		$AnimationPlayer.play("idle")
-#	else:
-#		$AnimationPlayer.play("run")
+	if velocity == Vector2.ZERO:
+		$AnimationPlayer.play("idle")
+	else:
+		$AnimationPlayer.play("run")
  
 	if velocity.x < 0:
 		$Sprite2D.flip_h = true
+		
 	elif velocity.x > 0:
 		$Sprite2D.flip_h = false
+
+func _ready():
+	Persistence.gain_bonus_stats(self)
+
  
 func take_damage(amount):
 	health -= max(amount * (amount/(amount + armor)),1)
 	
- 
+
 func _on_self_damage_body_entered(body):
 	take_damage(body.damage)
  

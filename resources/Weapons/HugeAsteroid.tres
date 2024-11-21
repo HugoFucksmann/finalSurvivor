@@ -1,10 +1,9 @@
-[gd_resource type="Resource" script_class="Circular" load_steps=6 format=3 uid="uid://cgwxwx4sj52ul"]
+[gd_resource type="Resource" script_class="Circular" load_steps=5 format=3 uid="uid://cgwxwx4sj52ul"]
 
 [ext_resource type="Texture2D" uid="uid://clhnm3oktgxlr" path="res://assets/Projectiles/tile004.png" id="1_xqa16"]
 [ext_resource type="PackedScene" uid="uid://co8ohhjrktowf" path="res://items/projectile/projectile.tscn" id="2_o75lf"]
 [ext_resource type="Script" path="res://items/weapons/CircularWeapon.gd" id="3_npn3x"]
 [ext_resource type="Texture2D" uid="uid://bjv4grvcbygo1" path="res://assets/Projectiles/010.png" id="4_sscn4"]
-[ext_resource type="Script" path="res://Ui/Upgrade.gd" id="5_r1ub0"]
 
 [resource]
 script = ExtResource("3_npn3x")
@@ -15,7 +14,7 @@ damage = 10.0
 cooldown = 2.0
 speed = 0.0
 projectile_node = ExtResource("2_o75lf")
-upgrades = Array[ExtResource("5_r1ub0")]([])
+upgrades = []
 title = "Huge Asteroid"
 icon = ExtResource("1_xqa16")
 texture = ExtResource("4_sscn4")

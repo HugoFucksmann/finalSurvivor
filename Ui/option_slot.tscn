@@ -22,7 +22,7 @@ offset_right = 141.0
 offset_bottom = 27.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-text = "Lvl 2"
+text = "Lvl 1"
 
 [node name="Description" type="Label" parent="."]
 layout_mode = 0
@@ -41,6 +41,6 @@ layout_mode = 0
 offset_right = 315.0
 offset_bottom = 42.0
 texture = ExtResource("3_5u2sk")
-region_rect = Rect2(49.4456, 72.3551, 1871.45, 1862.5)
+region_rect = Rect2(-2.06665, 2.28882e-05, 561.192, 334.537)
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

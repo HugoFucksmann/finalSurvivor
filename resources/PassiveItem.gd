@@ -2,11 +2,11 @@ extends Item
 class_name PassiveItem
 
 @export var upgrades : Array[Stats]
-var player_reference
+var player_reference = preload("res://players/player.tscn")
 
 func is_upgradable() -> bool:
 	print("Checking is_upgradable, level: ", level, ", upgrades.size(): ", upgrades.size())
-	return level <= upgrades.size()	
+	return level < upgrades.size()  # Cambiado a < en lugar de <=
 		
 func upgrade_item():
 	print("Upgrading item, current level: ", level)
@@ -27,7 +27,7 @@ func upgrade_item():
 	player_reference.area += upgrade.area
 	player_reference.magnet += upgrade.magnet
 	player_reference.growth += upgrade.growth
-	player_reference.growth += upgrade.growth
+	
 	print("Upgrading item, new level: ", level + 1)
 	
 	level += 1

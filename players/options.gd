@@ -86,6 +86,7 @@ func add_passive(item):
 			slot.item = item
 			return
 			
+
 func check_item(item):
 	if item in get_available_resource_in(weapons) or item in get_available_resource_in(passive_items):
 		return

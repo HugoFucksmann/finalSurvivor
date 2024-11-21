@@ -7,102 +7,18 @@
 [ext_resource type="Texture2D" uid="uid://d1fmcm4svmb1h" path="res://assets/ui/panel.jpg" id="3_6316y"]
 [ext_resource type="Texture2D" uid="uid://qcebra1auw21" path="res://assets/progressBar/barEmpty.png" id="4_jruri"]
 [ext_resource type="Texture2D" uid="uid://d3jjr1ydrhe13" path="res://assets/progressBar/bartres.png" id="5_w22ha"]
+[ext_resource type="Resource" uid="uid://dr4ebscsks6h1" path="res://resources/Weapons/Asteroid.tres" id="6_g5vpb"]
 [ext_resource type="Texture2D" uid="uid://dij82ows2wgjo" path="res://assets/progressBar/barFull.png" id="6_r60qv"]
 [ext_resource type="PackedScene" uid="uid://duiwskv1138er" path="res://sceenes/passive_slot.tscn" id="6_y4xvh"]
 [ext_resource type="Script" path="res://players/options.gd" id="7_5b1cm"]
+[ext_resource type="Resource" uid="uid://c7tm0m6sd7bup" path="res://resources/Weapons/Ligthning.tres" id="7_g0t8j"]
+[ext_resource type="Resource" uid="uid://c6pcx4alilthx" path="res://resources/Magnet.tres" id="7_ud2ma"]
+[ext_resource type="Resource" uid="uid://2q7nq6b2y1u1" path="res://resources/PassiveItem/Movement_Speed.tres" id="9_pov70"]
+[ext_resource type="Resource" uid="uid://do6kavrevydmc" path="res://resources/PassiveItem/Might.tres" id="11_qmjlb"]
 [ext_resource type="Texture2D" uid="uid://68n54hq1wm8x" path="res://assets/ui/bg.png" id="12_0aw4c"]
 [ext_resource type="Script" path="res://Ui/chest.gd" id="13_yrefl"]
 [ext_resource type="Texture2D" uid="uid://57v0x1chrnug" path="res://assets/ui/chestTile.png" id="15_acq8h"]
-[ext_resource type="Texture2D" uid="uid://dqsg26i6u400f" path="res://assets/player/character.png" id="15_dbhfv"]
 [ext_resource type="Script" path="res://players/back.gd" id="19_i6gkk"]
-
-[sub_resource type="Animation" id="Animation_yo5ms"]
-resource_name = "walk"
-length = 1.00001
-step = 0.125
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_2gk4t"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:frame_coords")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [Vector2i(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_jurgx"]
-resource_name = "idle"
-length = 1.00001
-loop_mode = 1
-step = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Vector2i(0, 0), Vector2i(1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_u88mu"]
-resource_name = "run"
-length = 0.875013
-loop_mode = 1
-step = 0.125
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [6, 7, 8, 7]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_lwhtl"]
-_data = {
-"RESET": SubResource("Animation_2gk4t"),
-"idle": SubResource("Animation_jurgx"),
-"run": SubResource("Animation_u88mu"),
-"walk": SubResource("Animation_yo5ms")
-}
 
 [sub_resource type="Gradient" id="Gradient_nsmpd"]
 offsets = PackedFloat32Array(0, 0.220588, 1)
@@ -176,6 +92,9 @@ shadow_size = 1
 shadow_offset = Vector2(3, 3)
 anti_aliasing = false
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gts41"]
+size = Vector2(20, 20)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_fvasa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x7y5u"]
@@ -184,14 +103,8 @@ anti_aliasing = false
 radius = 50.0
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(358, 544)
+position = Vector2(538, 976)
 script = ExtResource("1_5louy")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_lwhtl")
-}
-autoplay = "idle"
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -218,10 +131,10 @@ text = "Recovery: 0"
 
 [node name="Gold" type="Label" parent="UI"]
 unique_name_in_owner = true
-offset_left = 585.0
-offset_top = 93.0
-offset_right = 683.0
-offset_bottom = 116.0
+offset_left = 970.0
+offset_top = 88.0
+offset_right = 1068.0
+offset_bottom = 111.0
 text = "Gold: 0"
 horizontal_alignment = 2
 
@@ -264,9 +177,11 @@ item = ExtResource("3_2o3ic")
 
 [node name="Slot2" parent="UI/Weapons" instance=ExtResource("2_xibop")]
 layout_mode = 2
+item = ExtResource("6_g5vpb")
 
 [node name="Slot3" parent="UI/Weapons" instance=ExtResource("2_xibop")]
 layout_mode = 2
+item = ExtResource("7_g0t8j")
 
 [node name="PassiveItems" type="HBoxContainer" parent="UI"]
 offset_left = 63.0
@@ -276,18 +191,21 @@ offset_bottom = 161.0
 
 [node name="PassiveSlot" parent="UI/PassiveItems" instance=ExtResource("6_y4xvh")]
 layout_mode = 2
+item = ExtResource("7_ud2ma")
 
 [node name="PassiveSlot2" parent="UI/PassiveItems" instance=ExtResource("6_y4xvh")]
 layout_mode = 2
+item = ExtResource("9_pov70")
 
 [node name="PassiveSlot3" parent="UI/PassiveItems" instance=ExtResource("6_y4xvh")]
 layout_mode = 2
+item = ExtResource("11_qmjlb")
 
 [node name="XP" type="TextureProgressBar" parent="UI"]
 unique_name_in_owner = true
 offset_left = 19.0
 offset_top = 3.0
-offset_right = 1019.0
+offset_right = 1088.0
 offset_bottom = 43.0
 max_value = 10.0
 texture_under = ExtResource("4_jruri")
@@ -297,15 +215,16 @@ texture_progress = ExtResource("6_r60qv")
 [node name="Level" type="Label" parent="UI/XP"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 627.0
-offset_top = 63.0
-offset_right = 667.0
-offset_bottom = 92.0
+offset_left = 1015.0
+offset_top = 57.0
+offset_right = 1055.0
+offset_bottom = 86.0
 text = "Lvl 1"
 
 [node name="Options" type="VBoxContainer" parent="UI" node_paths=PackedStringArray("weapons", "passive_items", "particles", "panel")]
 unique_name_in_owner = true
 process_mode = 3
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -452,16 +371,12 @@ text = "Back to menu"
 script = ExtResource("19_i6gkk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("15_dbhfv")
-hframes = 3
-vframes = 4
+texture = SubResource("PlaceholderTexture2D_gts41")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("CircleShape2D_fvasa")
 
 [node name="SelfDamage" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 2
 
@@ -490,7 +405,6 @@ collision_mask = 4
 
 [node name="Magnet" type="CollisionShape2D" parent="Magnes"]
 unique_name_in_owner = true
-visible = false
 position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_3jis4")
 

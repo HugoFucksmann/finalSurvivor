@@ -10,3 +10,4 @@ title = "Boss Chest"
 icon = ExtResource("1_l4peb")
 description = ""
 sound = ExtResource("3_q77sn")
+weight = 0.0

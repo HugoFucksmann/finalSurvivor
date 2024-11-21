@@ -5,7 +5,7 @@ class_name Weapon
 @export var cooldown : float
 @export var speed : float
 @export var projectile_node : PackedScene = preload("res://items/projectile/projectile.tscn")
-@export var upgrades : Array[Upgrade]
+@export var upgrades : Array
 @export var item_needed : PassiveItem
 @export var evolution : Weapon
 @export var sound : AudioStream

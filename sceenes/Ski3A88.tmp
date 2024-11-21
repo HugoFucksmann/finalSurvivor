@@ -1,16 +1,11 @@
-[gd_scene load_steps=26 format=3 uid="uid://cs25raliowigf"]
+[gd_scene load_steps=15 format=3 uid="uid://cs25raliowigf"]
 
 [ext_resource type="PackedScene" uid="uid://dry7q2v82a3so" path="res://sceenes/upgrade.tscn" id="1_7cfcd"]
 [ext_resource type="Script" path="res://Ui/mainMenu.gd" id="1_tsyqn"]
 [ext_resource type="Script" path="res://Ui/skill_tree.gd" id="1_tu231"]
 [ext_resource type="Script" path="res://Ui/Ui_gold.gd" id="5_ouxf2"]
-[ext_resource type="Script" path="res://Ui/skill.gd" id="5_sdv30"]
-[ext_resource type="Script" path="res://resources/stats.gd" id="6_mo3s8"]
-[ext_resource type="Texture2D" uid="uid://4w5yx0ualcfl" path="res://assets/passiveWeapons/Might_pluma.png" id="7_3wxkk"]
-[ext_resource type="Texture2D" uid="uid://cr41ys0u1hfvv" path="res://assets/passiveWeapons/armor.png" id="8_f1obw"]
 [ext_resource type="Texture2D" uid="uid://yxnd08cmjey2" path="res://assets/ui/GUI.png" id="8_uj8yp"]
 [ext_resource type="Script" path="res://Ui/start.gd" id="9_ryl8m"]
-[ext_resource type="Texture2D" uid="uid://vgdr2kfli2q8" path="res://assets/passiveWeapons/batery_recovery.png" id="9_ynxlo"]
 
 [sub_resource type="Theme" id="Theme_t4ady"]
 Button/colors/font_color = Color(0.87451, 0.964706, 0.87451, 1)
@@ -18,66 +13,6 @@ Button/colors/font_color = Color(0.87451, 0.964706, 0.87451, 1)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w6p16"]
 texture = ExtResource("8_uj8yp")
 region_rect = Rect2(5.19473, 101.525, 37.4106, 21.9428)
-
-[sub_resource type="Resource" id="Resource_t2wpj"]
-script = ExtResource("6_mo3s8")
-description = "10% migth"
-max_health = 0.0
-recovery = 0.0
-armor = 0.0
-movement_speed = 0.0
-might = 0.1
-area = 0.0
-magnet = 0.0
-growth = 0.0
-luck = 0.0
-
-[sub_resource type="Resource" id="Resource_nsnqu"]
-script = ExtResource("5_sdv30")
-name = "Might I"
-texture = ExtResource("7_3wxkk")
-cost = 10
-stats = SubResource("Resource_t2wpj")
-
-[sub_resource type="Resource" id="Resource_pfiql"]
-script = ExtResource("6_mo3s8")
-description = "+3 armor"
-max_health = 0.0
-recovery = 0.0
-armor = 3.0
-movement_speed = 0.0
-might = 0.0
-area = 0.0
-magnet = 0.0
-growth = 0.0
-luck = 0.0
-
-[sub_resource type="Resource" id="Resource_hpac5"]
-script = ExtResource("5_sdv30")
-name = "Armor I"
-texture = ExtResource("8_f1obw")
-cost = 10
-stats = SubResource("Resource_pfiql")
-
-[sub_resource type="Resource" id="Resource_3ooy4"]
-script = ExtResource("6_mo3s8")
-description = "10% Recovery"
-max_health = 0.0
-recovery = 10.0
-armor = 0.0
-movement_speed = 0.0
-might = 0.0
-area = 0.0
-magnet = 0.0
-growth = 0.0
-luck = 0.0
-
-[sub_resource type="Resource" id="Resource_yopj4"]
-script = ExtResource("5_sdv30")
-name = "Recovery I"
-texture = ExtResource("9_ynxlo")
-cost = 100
-stats = SubResource("Resource_3ooy4")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qxq8s"]
 texture = ExtResource("8_uj8yp")
@@ -147,11 +82,26 @@ grow_vertical = 2
 [node name="Upgrade" parent="SkillTree/Might" instance=ExtResource("1_7cfcd")]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 0
-offset_left = 36.5
-offset_top = -157.5
-offset_right = 76.5
-offset_bottom = -117.5
-skill = SubResource("Resource_nsnqu")
+offset_left = 50.5
+offset_top = -166.5
+offset_right = 90.5
+offset_bottom = -126.5
+
+[node name="Upgrade2" parent="SkillTree/Might" instance=ExtResource("1_7cfcd")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = 151.5
+offset_top = -166.5
+offset_right = 191.5
+offset_bottom = -126.5
+
+[node name="Upgrade3" parent="SkillTree/Might" instance=ExtResource("1_7cfcd")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = 256.5
+offset_top = -166.5
+offset_right = 296.5
+offset_bottom = -126.5
 
 [node name="Armor" type="Control" parent="SkillTree"]
 layout_mode = 1
@@ -165,10 +115,25 @@ offset_bottom = 330.0
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 0
 offset_left = -22.0
-offset_top = 9.0
+offset_top = 6.0
 offset_right = 18.0
-offset_bottom = 49.0
-skill = SubResource("Resource_hpac5")
+offset_bottom = 46.0
+
+[node name="Upgrade2" parent="SkillTree/Armor" instance=ExtResource("1_7cfcd")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = -22.0
+offset_top = -68.0
+offset_right = 18.0
+offset_bottom = -28.0
+
+[node name="Upgrade3" parent="SkillTree/Armor" instance=ExtResource("1_7cfcd")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = -23.0
+offset_top = -146.0
+offset_right = 17.0
+offset_bottom = -106.0
 
 [node name="Recovery" type="Control" parent="SkillTree"]
 anchors_preset = 0
@@ -180,11 +145,27 @@ offset_bottom = 391.0
 [node name="Upgrade" parent="SkillTree/Recovery" instance=ExtResource("1_7cfcd")]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 0
-offset_left = 11.0
-offset_top = 15.0
-offset_right = 51.0
-offset_bottom = 55.0
-skill = SubResource("Resource_yopj4")
+
+[node name="Upgrade2" parent="SkillTree/Recovery" instance=ExtResource("1_7cfcd")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = -67.0
+offset_top = 2.0
+offset_right = -27.0
+offset_bottom = 42.0
+
+[node name="Upgrade3" parent="SkillTree/Recovery" instance=ExtResource("1_7cfcd")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -6.726
+anchor_top = -8.419
+anchor_right = -6.726
+anchor_bottom = -8.419
+offset_left = 136.04
+offset_top = 336.76
+offset_right = 176.04
+offset_bottom = 376.76
 
 [node name="Menu" type="Panel" parent="."]
 visible = false
