@@ -11,3 +11,4 @@ title = "Blue Gem"
 icon = ExtResource("1_wu5vt")
 description = "Gain XP Point"
 sound = ExtResource("3_vbh4r")
+weight = 0.0

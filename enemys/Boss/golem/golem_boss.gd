@@ -38,6 +38,8 @@ func _ready():
 func _process(delta):
 	if is_dying:
 		return
+	if player == null:
+		return
 	direction = player.position - position
 	check_separation(delta)
  

@@ -5,6 +5,9 @@ var total_stat : Stats
  
 func _ready():
 	load_skill_tree()
+	for branch in get_children():
+		for upgrade in branch.get_children():
+			upgrade.connect("toggled", Callable(self, "_on_Upgrade_toggled"))
  
 func load_skill_tree():
 	if SavedData.skill_tree == []:
@@ -44,3 +47,10 @@ func get_total_stats():
 			if upgrade.enabled:
 				add_stats(upgrade.skill.stats)
 	Persistence.bonus_stats = total_stat
+ 
+func _on_Upgrade_toggled(upgrade: Node):
+	var branch_index = upgrade.get_parent().get_index()
+	var upgrade_index = upgrade.get_index()
+	skill_tree[branch_index][upgrade_index] = upgrade.enabled
+	SavedData.skill_tree = skill_tree
+	SavedData.set_and_save()

@@ -5,3 +5,4 @@ class_name Skill
 @export var texture : Texture2D
 @export var cost : int
 @export var stats : Stats
+@export var description: String

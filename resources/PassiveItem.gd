@@ -2,7 +2,7 @@ extends Item
 class_name PassiveItem
 
 @export var upgrades : Array[Stats]
-var player_reference = preload("res://players/player.tscn")
+var player_reference
 
 func is_upgradable() -> bool:
 	print("Checking is_upgradable, level: ", level, ", upgrades.size(): ", upgrades.size())

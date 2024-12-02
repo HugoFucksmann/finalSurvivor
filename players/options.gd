@@ -83,6 +83,7 @@ func add_weapon(item):
 func add_passive(item):
 	for slot in passive_items.get_children():
 		if slot.item == null:
+			item.player_reference = owner
 			slot.item = item
 			return
 			

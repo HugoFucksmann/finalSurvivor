@@ -388,6 +388,7 @@ height = 46.0
 radius = 71.007
 
 [node name="GolemBoss" type="CharacterBody2D"]
+position = Vector2(293, 234)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_7vqps")
@@ -463,6 +464,7 @@ theme_override_font_sizes/font_size = 8
 text = "debug"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3)

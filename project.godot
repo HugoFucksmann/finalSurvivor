@@ -31,7 +31,6 @@ shapes/avoidance/enable_obstacles_static=false
 window/size/viewport_width=720
 window/size/viewport_height=1080
 window/stretch/mode="viewport"
-window/stretch/scale=1.4
 
 [dotnet]
 

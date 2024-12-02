@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cs25raliowigf"]
+[gd_scene load_steps=32 format=3 uid="uid://cs25raliowigf"]
 
 [ext_resource type="PackedScene" uid="uid://dry7q2v82a3so" path="res://sceenes/upgrade.tscn" id="1_7cfcd"]
 [ext_resource type="Script" path="res://Ui/mainMenu.gd" id="1_tsyqn"]
@@ -38,6 +38,23 @@ name = "Might I"
 texture = ExtResource("7_3wxkk")
 cost = 10
 stats = SubResource("Resource_t2wpj")
+description = ""
+
+[sub_resource type="Resource" id="Resource_might_ii"]
+script = ExtResource("5_sdv30")
+name = "Might II"
+texture = ExtResource("7_3wxkk")
+cost = 100
+stats = SubResource("Resource_t2wpj")
+description = "15% might"
+
+[sub_resource type="Resource" id="Resource_might_iii"]
+script = ExtResource("5_sdv30")
+name = "Might III"
+texture = ExtResource("7_3wxkk")
+cost = 1000
+stats = SubResource("Resource_t2wpj")
+description = "20% might"
 
 [sub_resource type="Resource" id="Resource_pfiql"]
 script = ExtResource("6_mo3s8")
@@ -58,6 +75,23 @@ name = "Armor I"
 texture = ExtResource("8_f1obw")
 cost = 10
 stats = SubResource("Resource_pfiql")
+description = ""
+
+[sub_resource type="Resource" id="Resource_armor_ii"]
+script = ExtResource("5_sdv30")
+name = "Armor II"
+texture = ExtResource("8_f1obw")
+cost = 100
+stats = SubResource("Resource_pfiql")
+description = "+5 armor"
+
+[sub_resource type="Resource" id="Resource_armor_iii"]
+script = ExtResource("5_sdv30")
+name = "Armor III"
+texture = ExtResource("8_f1obw")
+cost = 1000
+stats = SubResource("Resource_pfiql")
+description = "+7 armor"
 
 [sub_resource type="Resource" id="Resource_3ooy4"]
 script = ExtResource("6_mo3s8")
@@ -78,6 +112,23 @@ name = "Recovery I"
 texture = ExtResource("9_ynxlo")
 cost = 100
 stats = SubResource("Resource_3ooy4")
+description = ""
+
+[sub_resource type="Resource" id="Resource_recovery_ii"]
+script = ExtResource("5_sdv30")
+name = "Recovery II"
+texture = ExtResource("9_ynxlo")
+cost = 100
+stats = SubResource("Resource_3ooy4")
+description = "15% Recovery"
+
+[sub_resource type="Resource" id="Resource_recovery_iii"]
+script = ExtResource("5_sdv30")
+name = "Recovery III"
+texture = ExtResource("9_ynxlo")
+cost = 1000
+stats = SubResource("Resource_3ooy4")
+description = "20% Recovery"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qxq8s"]
 texture = ExtResource("8_uj8yp")
@@ -153,6 +204,24 @@ offset_right = 76.5
 offset_bottom = -117.5
 skill = SubResource("Resource_nsnqu")
 
+[node name="Upgrade2" parent="SkillTree/Might" instance=ExtResource("1_7cfcd")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = 76.5
+offset_top = -117.5
+offset_right = 116.5
+offset_bottom = -77.5
+skill = SubResource("Resource_might_ii")
+
+[node name="Upgrade3" parent="SkillTree/Might" instance=ExtResource("1_7cfcd")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = 196.5
+offset_top = 2.5
+offset_right = 236.5
+offset_bottom = 42.5
+skill = SubResource("Resource_might_iii")
+
 [node name="Armor" type="Control" parent="SkillTree"]
 layout_mode = 1
 anchors_preset = 0
@@ -170,6 +239,24 @@ offset_right = 18.0
 offset_bottom = 49.0
 skill = SubResource("Resource_hpac5")
 
+[node name="Upgrade2" parent="SkillTree/Armor" instance=ExtResource("1_7cfcd")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = -22.0
+offset_top = 49.0
+offset_right = 18.0
+offset_bottom = 89.0
+skill = SubResource("Resource_armor_ii")
+
+[node name="Upgrade3" parent="SkillTree/Armor" instance=ExtResource("1_7cfcd")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = -22.0
+offset_top = 89.0
+offset_right = 18.0
+offset_bottom = 129.0
+skill = SubResource("Resource_armor_iii")
+
 [node name="Recovery" type="Control" parent="SkillTree"]
 anchors_preset = 0
 offset_left = 235.0
@@ -185,6 +272,24 @@ offset_top = 15.0
 offset_right = 51.0
 offset_bottom = 55.0
 skill = SubResource("Resource_yopj4")
+
+[node name="Upgrade2" parent="SkillTree/Recovery" instance=ExtResource("1_7cfcd")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = 51.0
+offset_top = 55.0
+offset_right = 91.0
+offset_bottom = 95.0
+skill = SubResource("Resource_recovery_ii")
+
+[node name="Upgrade3" parent="SkillTree/Recovery" instance=ExtResource("1_7cfcd")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = 171.0
+offset_top = 55.0
+offset_right = 211.0
+offset_bottom = 95.0
+skill = SubResource("Resource_recovery_iii")
 
 [node name="Menu" type="Panel" parent="."]
 visible = false
